@@ -2,6 +2,7 @@ import eventdata from "../components/eventsdata";
 import styles from "../styles/GR/Gr.module.css";
 import QA from "../components/gr/QA";
 import Carousel from "../components/esummit/carousel";
+import Link from "next/dist/client/link";
 import Head from "next/head";
 
 export const getStaticPaths = () => {
@@ -131,6 +132,11 @@ function Event({ event }) {
         <div className={styles.header}>
           <div className={styles.event}>
             <div className={styles.name}>{event[0].heading}</div>
+            <div>
+              <Link href="/events">
+                <button type="button" className={styles.button}>Register</button>
+              </Link>
+            </div>
           </div>
           <div className={styles.carousel}>
             <Carousel slides={event[0].carouselImages} />

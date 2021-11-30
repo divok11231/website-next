@@ -1,19 +1,8 @@
-.form {
-    margin: auto;
-    align-items: center;
-    justify-content: center;
-    align-self: center;
-    align-content: center;
-    display: flex;
-    flex-direction: column;
-}
-
 .div {
     font-size: 2em;
 }
 
 .input {
-    margin-top: 3vh;
     margin-bottom: 3vh;
     margin-right: 0vw;
     margin-left: 0vw;
@@ -26,24 +15,9 @@
     border: none;
     /* box-shadow: 5px 5px 10px rgb(0, 119, 255); */
     background-color: white;
-    width: 20vw;
+    width: 15vw;
     margin: 0px;
     height: 5vh;
-    color: black;
-    font-size: x-large;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
-}
-
-.inputbox1 {
-    position: relative;
-    border: none;
-    border-radius: 3px;
-    /* box-shadow: 5px 5px 10px rgb(0, 119, 255) ; */
-    background-color: white;
-    width: 30vw;
-    margin: 0px;
-    height: 10vh;
     color: black;
     font-size: x-large;
     font-family: 'Courier New', Courier, monospace;
@@ -65,21 +39,15 @@
     width: 10vw;
     height: 5vh;
     font-size: large;
+    margin-bottom: 2vh;
 }
 
-@media screen and (max-width: 1200px) {
-    .distri {
-        flex-direction: column;
-    }
+@media screen and (max-width: 600px) {
     .inputbox {
-        width: 60vw;
-    }
-    .inputbox1 {
-        width: 60vw;
-        height: 20vh;
+        width: 40vw;
     }
     .submit {
-        width: 60vw;
+        width: 40vw;
         margin-left: auto;
     }
   }

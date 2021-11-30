@@ -16,39 +16,35 @@ function Event_Tiles() {
   return (
     <div>
       <form className={styles.form}>
-        <div className={styles.distri}>
-          <div className={styles.input}>
-            <div className={styles.div}>Name</div>
-            <input type="text" name="name" value={name} onChange={()=>{setName()}} className={styles.inputbox} required />
-          </div>
-          <div className={styles.input}>
-            <div className={styles.div}>Email Address</div>
-            <input type="email" name="email" value={email} onChange={()=>{setEmail()}} className={styles.inputbox} required />
-          </div>
-          <div className={styles.input}>
-            <div className={styles.div}>Contact Number</div>
-            <input type="text" name="number" value={contact} onChange={()=>{setContact()}} className={styles.inputbox} required />
-          </div>
+
+        <div className={styles.input}>
+          <div className={styles.div}>Name</div>
+          <input placeholder="Name" type="text" name="name" value={name} onChange={(e) => { setName(e.target.value) }} className={styles.inputbox} required />
         </div>
-        <div className={styles.distri}>
-          <div className={styles.input}>
-            <div className={styles.div}>Team Members' name</div>
-            <input type="text" name="members" value={team} onChange={()=>{setTeam()}} className={styles.inputbox} required />
-          </div>
-          <div className={styles.input}>
-            <div className={styles.div}>College(if any)</div>
-            <input type="text" name="college" value={college} onChange={()=>{setCollege()}} className={styles.inputbox} />
-          </div>
+        <div className={styles.input}>
+          <div className={styles.div}>Email Address</div>
+          <input placeholder="Email Address" type="email" name="email" value={email} onChange={(e) => { setEmail(e.target.value) }} className={styles.inputbox} required />
         </div>
-        <div className={styles.distri}>
-          <div className={styles.input}>
-            <div className={styles.div}>Name of Start-Up</div>
-            <input type="text" name="startUpName" value={start} onChange={()=>{setStart()}} className={styles.inputbox} required />
-          </div>
-          <div className={styles.input}>
-            <div className={styles.div}>Short Description of Start-Up</div>
-            <textarea name="description" placeholder="Short description..." value={desc} onChange={()=>{setDesc()}} className={styles.inputbox1} required></textarea>
-          </div>
+        <div className={styles.input}>
+          <div className={styles.div}>Contact Number</div>
+          <input placeholder="Contact Number" type="text" name="number" value={contact} onChange={(e) => { setContact(e.target.value) }} className={styles.inputbox} required />
+        </div>
+
+        <div className={styles.input}>
+          <div className={styles.div}>Team Members' name</div>
+          <input placeholder="Team Members" type="text" name="members" value={team} onChange={(e) => { setTeam(e.target.value) }} className={styles.inputbox} required />
+        </div>
+        <div className={styles.input}>
+          <div className={styles.div}>College(if any)</div>
+          <input placeholder="College Name" type="text" name="college" value={college} onChange={(e) => { setCollege(e.target.value) }} className={styles.inputbox} />
+        </div>
+        <div className={styles.input}>
+          <div className={styles.div}>Name of Start-Up</div>
+          <input placeholder="Name of Start-Up" type="text" name="startUpName" value={start} onChange={(e) => { setStart(e.target.value) }} className={styles.inputbox} required />
+        </div>
+        <div className={styles.input}>
+          <div className={styles.div}>Short Description of Start-Up</div>
+          <textarea name="description" placeholder="Short description..." value={desc} onChange={(e) => { setDesc(e.target.value) }} className={styles.inputbox1} required></textarea>
         </div>
         <button type="submit" className={styles.submit}>Sign Up</button>
       </form>

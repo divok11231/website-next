@@ -19,15 +19,15 @@ function SuitUP() {
         setPage(false)
     }
     function returnComponent() {
-        if (code == '1') {
+        if (code == 'S1') {
             return (<Roundboxes />)
         }
-        else if (code == '2') {
+        else if (code == 'A2') {
             return (<Round2 />)
         }
-        else if (code == '3a') { return (<Round3a />) }
-        else if (code == '3b') { return (<Round3b />) }
-        else if (code == '5') {return (<Round5 />)
+        else if (code == 'B3a') { return (<Round3a />) }
+        else if (code == 'F3b') { return (<Round3b />) }
+        else if (code == 'J5') {return (<Round5 />)
         } else {
             setPage(true)
     }

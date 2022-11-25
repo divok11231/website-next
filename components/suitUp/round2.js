@@ -69,9 +69,9 @@ function Round2() {
               
               <div className={styles.main}>
               <div className={styles.header}>Round 2 - Target Customers </div>
-        <div className={styles.all}>
+        {/* <div className={styles.all}>
           <Link href="https://www.npmjs.com/package/tabletop">all Scores for round 1</Link>
-              </div>
+              </div> */}
               <div className={styles.Teamcode}>
                 <div className={styles.team}>Team Code</div>
                   <input className={styles.input} name="team" value={data.team} onChange={handlechange} />

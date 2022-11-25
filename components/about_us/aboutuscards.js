@@ -42,7 +42,7 @@ export default function Aboutus() {
     {
       id: 2,
       src: Noll,
-      name: 'Dhyey Rajguru',
+      name: 'Dhyey Rajyaguru',
       classy: 'position',
       position: 'Chairman',
       email: 'f20202222@hyderabad.bits-pilani.ac.in'

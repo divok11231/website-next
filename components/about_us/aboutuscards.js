@@ -5,6 +5,7 @@ import sonakshi from '../../assets/images/Executives-2019/2.jpg'
 import nikhil from '../../assets/images/Executives-2019/nikhil.jpg'
 import Noll from '../../assets/images/Executives-2020/noll.png'
 import MadhuMita from '../../assets/images/Executives-2020/Madhu.jpeg'
+import Dhyey from "../../assets/images/Executives-2020/Dhyey.jpeg"
 // import Yashsav from '../../assets/images/Executives/Yashsav_Gupta.jpg'
 // import Pratyush from '../../assets/images/Executives/Pratyush_Choudhary.png'
 import Tushar from '../../assets/images/Executives-2020/TusharNew.jpeg'
@@ -41,11 +42,11 @@ export default function Aboutus() {
     },
     {
       id: 2,
-      src: Noll,
-      name: 'Dhyey Rajguru',
+      src: Dhyey,
+      name: 'Dhyey Rajyaguru',
       classy: 'position',
       position: 'Chairman',
-      email: 'f20202222@hyderabad.bits-pilani.ac.in'
+      email: 'f20202148@hyderabad.bits-pilani.ac.in'
     },
     {
       id: 4,
@@ -53,7 +54,7 @@ export default function Aboutus() {
       name: 'Shreyans Soni',
       classy: 'position',
       position: 'Vice-Chairman',
-      email: 'f20191459@hyderabad.bits-pilani.ac.in'
+      email: 'f20202155@hyderabad.bits-pilani.ac.in'
     },
     {
       id: 3,

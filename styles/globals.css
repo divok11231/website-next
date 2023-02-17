@@ -49,7 +49,7 @@ a {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgb(0, 153, 255);
+  background: rgb(74, 64, 64);
 }
 
 /* Handle on hover */

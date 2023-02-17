@@ -1,5 +1,5 @@
 .box {
-  width: 55vw;
+  width: 60vw;
   align-items: center;
   background: radial-gradient(
     circle,
@@ -35,7 +35,7 @@
   font-size: 20px;
   font-weight: 500;
   border-radius: 10px;
-  color:aliceblue;
+  color: rgb(0, 170, 255);
   text-decoration: none;
   outline: none;
   border: none;
@@ -47,7 +47,7 @@
   margin-bottom: 20px;
 }
 .name:hover {
-  border-color: plum;
+  border-color: blue;
 }
 
 .formheading {
@@ -59,7 +59,7 @@
   background: url('../assets/images/text-bg2.webp');
   background-clip: text;
   -webkit-background-clip: text;
-  color: plum;
+  color: transparent;
   animation: moveBg 90s linear infinite;
   -webkit-animation: moveBg 10s linear infinite;
   animation: moveBg 10s;
@@ -127,12 +127,3 @@
   border-color: rgb(0, 170, 255);
   cursor: pointer;
 }
-
-/* @media screen and (max-width: 480px)
-{
-  .formwrap{
-    width:100%;
-
-  }
-  .form
-} */

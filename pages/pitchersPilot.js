@@ -173,32 +173,32 @@ function PitchersPilot() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    alert('Registrations for this event are closed, hope to see you next year!')
-    // if (cost === 0) {
-    //   axios
-    //     .post(
-    //       'https://sheet.best/api/sheets/32e90bd5-af25-42e6-b3a5-ee58f57f6cc6',
-    //       formdata
-    //     )
-    //     .then(
-    //       alert(
-    //         'Your Data has been Submitted ! You will receive a mail shortly with your details'
-    //       )
-    //     )
-    // } else {
-    //   await showRazorpay().then(
-    //     axios
-    //       .post(
-    //         'https://sheet.best/api/sheets/32e90bd5-af25-42e6-b3a5-ee58f57f6cc6',
-    //         formdata
-    //       )
-    //       .then(
-    //         alert(
-    //           'Your Data has been Submitted, please pay to complete your registration :)'
-    //         )
-    //       )
-    //   )
-    // }
+    // alert('Registrations for this event are closed, hope to see you next year!')
+    if (cost === 0) {
+      axios
+        .post(
+          'https://sheet.best/api/sheets/32e90bd5-af25-42e6-b3a5-ee58f57f6cc6',
+          formdata
+        )
+        .then(
+          alert(
+            'Your Data has been Submitted ! You will receive a mail shortly with your details'
+          )
+        )
+    } else {
+      await showRazorpay().then(
+        axios
+          .post(
+            'https://sheet.best/api/sheets/32e90bd5-af25-42e6-b3a5-ee58f57f6cc6',
+            formdata
+          )
+          .then(
+            alert(
+              'Your Data has been Submitted, please pay to complete your registration :)'
+            )
+          )
+      )
+    }
   }
 
   const showloader = () => {
@@ -315,7 +315,7 @@ function PitchersPilot() {
         <div className={styles.formContainer}>
           <div className={styles.form}>
             <div className={styles.formheader}>Pitcher&apos;s Pilot</div>
-            {/* {data.map((data) => {
+            {data.map((data) => {
               return (
                 <div className={styles.row} key={data.id}>
                   <div className={styles.inputs}>
@@ -377,11 +377,11 @@ function PitchersPilot() {
             </div>
             <div className={styles.submit} onClick={handleSubmit}>
               Submit
-            </div> */}
-            <div className={styles.Closed}>
+            </div>
+            {/* <div className={styles.Closed}>
               Registratons for this events have closed, hope to see you next
               year!
-            </div>
+            </div> */}
           </div>
         </div>
       )}

@@ -57,7 +57,7 @@ function PitchersPilot() {
 
   const [register, setRegister] = useState(false)
 
-  const [cost, setCost] = useState(300)
+  const [cost, setCost] = useState(1000)
   const [coupon, setCoupon] = useState('')
   const [couponText, setCouponText] = useState('Apply Coupon')
 
@@ -177,7 +177,7 @@ function PitchersPilot() {
     if (cost === 0) {
       axios
         .post(
-          'https://sheet.best/api/sheets/32e90bd5-af25-42e6-b3a5-ee58f57f6cc6',
+          'https://sheet.best/api/sheets/d68e5eb7-b020-4005-8026-b9a74c3c0a2c',
           formdata
         )
         .then(
@@ -189,7 +189,7 @@ function PitchersPilot() {
       await showRazorpay().then(
         axios
           .post(
-            'https://sheet.best/api/sheets/32e90bd5-af25-42e6-b3a5-ee58f57f6cc6',
+            'https://sheet.best/api/sheets/d68e5eb7-b020-4005-8026-b9a74c3c0a2c',
             formdata
           )
           .then(

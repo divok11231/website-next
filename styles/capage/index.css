@@ -1,0 +1,67 @@
+body {
+  margin: 0;
+  font-family: "Inder", sans-serif;
+  background-color: #3f0071;
+}
+
+code {
+  font-family: "Inder", sans-serif;
+}
+
+.posi {
+  margin: auto !important ;
+}
+.CAmain {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+.formm {
+  position: relative;
+  width: 50%;
+}
+
+.centr {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header {
+  margin-bottom: 7%;
+  font-family: "Inder", sans-serif;
+  color: white;
+
+  margin-right: 5% !important;
+}
+.codetext {
+  color: white;
+  font-size: larger;
+  margin: 1.5%;
+}
+.submitbtn {
+  background-color: #fb2576 !important;
+  color: white !important;
+}
+@media (max-width: 480px) {
+  .formm {
+    position: relative;
+    width: 85%;
+  }
+
+  .codetext {
+    color: white;
+    font-size: larger;
+    margin: 5%;
+  }
+  .header {
+    margin: 15% 0;
+    font-family: "Inder", sans-serif;
+    color: white;
+  }
+  h1 {
+    text-align: center;
+  }
+}

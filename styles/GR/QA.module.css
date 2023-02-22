@@ -18,10 +18,11 @@
 
 .panel {
   padding: 0px 15px;
-  border: 2px solid plum;
+  border: 2px solid purple;
   border-radius: 10px;
   padding-left: 20px;
-  
+  /* background-color: purple; */
+  /* background: radial-gradient(circle at 52.1% -29.6%, rgb(144, 17, 105) 0%, rgb(51, 0, 131) 100.2%); */
   height: min-content;
   font-size: 14px;
   text-align: left;
@@ -39,7 +40,6 @@
 .accordian {
   padding: 0px 5px;
   display: flex;
-
   justify-content: start;
   margin-bottom: 5px;
   align-items: center;

@@ -25,6 +25,7 @@
   margin: 30px;
   padding: 20px;
   transition: 0.15s;
+  border-inline-color: pink;
 }
 .info {
   color: grey;

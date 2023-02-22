@@ -9,12 +9,12 @@ export default function QA({ question, answer, classy, questionid }) {
       <div className={styles.qa}>
         <div className={styles.accordian}>
           <div>
-            <Image className={styles.icon} src={Qm} width={30} height={25} />
+            {/* <Image className={styles.icon} src={Qm} width={30} height={25} /> */}
           </div>
           <div className={styles.h}> {question} </div>
         </div>
         <div className={styles.panel}>
-          <p className={styles[`${classy}`]}>{answer}</p>
+          <p className={styles[`${classy}`]}>{answer}</p> 
         </div>
       </div>
     </>

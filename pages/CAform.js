@@ -189,7 +189,7 @@ function CAform() {
           <div className={styles.column}>
             This is Your code :{' '}
             {getCode ? (
-              <>{data.code}</>
+                          <>{data.code == '' ? (<>loading...</>) : (<>{data.code}</>)}</>
             ) : (
               <>
                 <div className={styles.get}onClick={handleCode}>GET CODE</div>

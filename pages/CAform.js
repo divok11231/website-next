@@ -104,7 +104,7 @@ function CAform() {
       <form className={styles.form}>
         <div className={styles.row}>
           <div className={styles.column}>
-            <label className={styles.label} for="name">
+            <label className={styles.label} >
               Name
             </label>
             <input
@@ -117,7 +117,7 @@ function CAform() {
             />
           </div>
           <div className={styles.column}>
-            <label className={styles.label} for="email">
+            <label className={styles.label} >
               Email
             </label>
             <input
@@ -132,7 +132,7 @@ function CAform() {
         </div>
         <div className={styles.row}>
           <div className={styles.column}>
-            <label className={styles.label} for="contact">
+            <label className={styles.label} f>
               Contact Number
             </label>
             <input
@@ -145,7 +145,7 @@ function CAform() {
             />
           </div>
           <div className={styles.column}>
-            <label className={styles.label} for="collegeName">
+            <label className={styles.label} >
               College Name
             </label>
             <input
@@ -160,7 +160,7 @@ function CAform() {
         </div>
         <div className={styles.row}>
           <div className={styles.column}>
-            <label className={styles.label} for="City">
+            <label className={styles.label} >
               City{' '}
             </label>
             <input
@@ -172,7 +172,7 @@ function CAform() {
             />
           </div>
           <div className={styles.column}>
-            <label className={styles.label} for="Year of Graduation">
+            <label className={styles.label} >
               Year of Graduation
             </label>
             <input
@@ -199,7 +199,7 @@ function CAform() {
         </div>
         <div className={styles.row}>
           <div className={styles.column}>
-            <label className={styles.label} for="how">
+            <label className={styles.label} >
               How did you learn about this event
             </label>
             <input

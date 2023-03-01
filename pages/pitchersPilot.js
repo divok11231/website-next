@@ -266,10 +266,10 @@ function PitchersPilot() {
       setCost(150)
       setCouponText('Coupon Applied')
     } else if (coupon === '') {
-      setCost(300)
+      setCost(1000)
       setCouponText('')
     } else {
-      setCost(300)
+      setCost(1000)
       setCouponText('Invalid Coupon')
     }
   }

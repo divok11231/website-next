@@ -75,7 +75,7 @@ function CAform() {
       })
       .then((res) => {
         console.log(res, 'ahuahuahu')
-        // window.location('https://www.ecellbphc.in/')
+        window.location('https://www.ecellbphc.in/')
       })
       .catch((err) => {
         console.log("kata tera lode")

@@ -82,6 +82,10 @@
 .get:hover{
   cursor: pointer;
 }
+.button:hover{
+  cursor: pointer;
+  opacity: 0.5;
+}
 @media screen and (max-width: 500px) {
   .container {
     width: 90vw;

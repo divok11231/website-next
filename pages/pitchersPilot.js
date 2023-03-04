@@ -57,7 +57,7 @@ function PitchersPilot() {
 
   const [register, setRegister] = useState(false)
 
-  const [cost, setCost] = useState(1)
+  const [cost, setCost] = useState(1000)
   const [coupon, setCoupon] = useState('')
   const [couponText, setCouponText] = useState('Apply Coupon')
 

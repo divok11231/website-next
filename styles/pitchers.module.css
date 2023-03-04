@@ -33,7 +33,7 @@
 .formheader {
   font-size: 3em;
   font-weight: 700;
-  border-bottom: 1px solid rgb(8, 126, 223);
+  border-bottom: 1px solid rgb(150, 11, 145);
   margin-bottom: 1em;
 }
 .row {
@@ -79,13 +79,13 @@
   font-size: 1.6em;
   width: auto;
   height: auto;
-  background: rgb(11, 87, 150);
+  background: rgb(150, 11, 145);
   padding: 10px 20px 10px 20px;
   border-radius: 5px;
 }
 .submit:hover {
   cursor: pointer;
-  background-color: rgb(8, 126, 223);
+  background-color: rgba(150, 11, 145, 0.43);
 }
 .header {
   width: 80%;
@@ -182,7 +182,7 @@
   background: -webkit-radial-gradient(
     center,
     50% 50%,
-    rgb(9, 53, 95),
+    rgba(213, 9, 183, 0.30),
     rgba(0, 0, 0, 1)
   );
   color: #fff;
@@ -196,7 +196,7 @@
   background: -webkit-radial-gradient(
     center,
     50% 50%,
-    rgb(38, 8, 75),
+    rgba(213, 9, 183, 0.30),
     rgba(0, 0, 0, 1)
   );
   width: 100%;

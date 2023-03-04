@@ -40,6 +40,7 @@ export default function Navbar(props) {
           <Link href="/blog">
             <a className={Navbarcss.button}>Blog</a>
           </Link>
+
           <Link href="/about">
             <a className={Navbarcss.button}>About us</a>
           </Link>
@@ -54,15 +55,15 @@ export default function Navbar(props) {
             </a>
           </Link> */}
           {' '}
-          <Link href="/suitUP">
-            <a
-              // onClick={() => {
-              //   setrender('ID')
-              // }}
-              className={Navbarcss.button}
-            >
-              Suit Up
-            </a>
+          <Link href="/pitchersPilot">
+//             <a
+//               // onClick={() => {
+//               //   setrender('ID')
+//               // }}
+//               className={Navbarcss.button}
+//             >
+             Pitchers Pilot
+//             </a>
           </Link>{' '}
           
           {/*<Link href="/welcome/signup">
@@ -128,9 +129,9 @@ export default function Navbar(props) {
             About Us
           </a>
         </Link>
-        <Link href="/suitUP">
+        <Link href="/pitchersPilot">
           <a onClick={() => handleClickID()} className={Navbarcss.mobilebtn}>
-            Suit Up
+           Pitchers Pilot
           </a>
         </Link>
 

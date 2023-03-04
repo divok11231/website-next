@@ -56,14 +56,9 @@ export default function Navbar(props) {
           </Link> */}
           {' '}
           <Link href="/pitchersPilot">
-//             <a
-//               // onClick={() => {
-//               //   setrender('ID')
-//               // }}
-//               className={Navbarcss.button}
-//             >
-             Pitchers Pilot
-//             </a>
+          <a className={Navbarcss.button}>
+             Pitcher&apos;s Pilot
+            </a>
           </Link>{' '}
           
           {/*<Link href="/welcome/signup">

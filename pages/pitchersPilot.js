@@ -257,13 +257,13 @@ function PitchersPilot() {
     e.preventDefault()
     setCoupon(e.target.value)
     if (coupon === 'SPECIAL') {
-      setCost(0)
+      setCost(1000)
       setCouponText('Coupon Applied')
     } else if (coupon === 'PP50') {
-      setCost(250)
+      setCost(1000)
       setCouponText('Coupon Applied')
     } else if (coupon === 'LUCKY50') {
-      setCost(150)
+      setCost(1000)
       setCouponText('Coupon Applied')
     } else if (coupon === '') {
       setCost(1000)
@@ -368,7 +368,7 @@ function PitchersPilot() {
                     {
                       setCoupon(e.target.value)
                       setCouponText('Apply Coupon')
-                      setCost(300)
+                      setCost(1000)
                     }
                   }}
                 />

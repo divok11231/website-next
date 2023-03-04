@@ -8,7 +8,7 @@ export default function QA({ question, answer, classy, questionid }) {
       <div className={styles.qa}>
         <div className={styles.accordian}>
           <div>
-            <Image className={styles.icon} src={info} width={30} height={25} />
+            {/* <Image className={styles.icon} src={info} width={30} height={25} /> */}
           </div>
           <div className={styles.h}> {question} </div>
         </div>

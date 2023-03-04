@@ -57,7 +57,7 @@ function PitchersPilot() {
 
   const [register, setRegister] = useState(false)
 
-  const [cost, setCost] = useState(1000)
+  const [cost, setCost] = useState(1)
   const [coupon, setCoupon] = useState('')
   const [couponText, setCouponText] = useState('Apply Coupon')
 
@@ -235,7 +235,7 @@ function PitchersPilot() {
       image:
         'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.facebook.com%2FeCELL.BPHC%2F&psig=AOvVaw35nBI8g6Br43zsJCHpUSXo&ust=1645856957114000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCOD68oydmvYCFQAAAAAdAAAAABAD',
       order_id: data.id,
-      callback_url: 'https://www.ecellbphc.in/paymentSuccess',
+      callback_url: '/paymentSuccess',
       prefill: {
         name: '',
         email: '',

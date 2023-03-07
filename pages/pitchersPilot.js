@@ -36,7 +36,7 @@ function PitchersPilot() {
       questionid: 'qone',
       question: 'STAGE 3',
       answer:
-        'The top 10 startups selected from all startups will be given a chance to pitch on the grand stage of Launchpad `23 live in front of our investor panel. Each session will be of 15-20 minutes, where startups will be given 5 minutes to pitch, and it will be followed by a Q&A round led by investors. If there are multiple offers, startups cant choose a single investor, and all the negotiations will take place back door. '
+        'The top 10 startups selected from all startups will be given a chance to pitch on the grand stage of Launchpad `23 live in front of our investor panel. Each session will be of 15-20 minutes, where startups will be given 5 minutes to pitch, and it will be followed by a Q&A round led by investors.'
     },
 
     {
@@ -300,7 +300,7 @@ function PitchersPilot() {
             seeking funds and mentorship to pitch their ideas directly to our
             esteemed panel, who can choose to invest in the company based on
             their reasoning. Touted as the central attraction of Launchpad
-            &apos;21, startups from all across the country, including various
+            &apos;23, startups from all across the country, including various
             prestigious universities, will be hosted to contest the event.
           </div>
           <div className={styles.container_fluid}>

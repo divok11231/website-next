@@ -20,7 +20,7 @@ function PitchersPilot() {
       questionid: 'qone',
       question: 'STAGE 1',
       answer:
-        'Startups will register for the event through our online portal with all the required submission. Top 50 pitch decks will be selected for the next round. Decision for the same will completely rest upon the discretion of LAUNCHPAD `22 Organizing Committee.Results will be announced via mail.'
+        'Startups will register for the event through our online portal with all the required submission. Top 50 pitch decks will be selected for the next round. Decision for the same will completely rest upon the discretion of LAUNCHPAD `23 Organizing Committee.Results will be announced via mail.'
     },
     {
       id: 8,
@@ -28,7 +28,7 @@ function PitchersPilot() {
       questionid: 'qone',
       question: 'STAGE 2',
       answer:
-        'The selected startups might be required to submit further details to LAUNCHPAD `22 which will be redirected to our Investor panel for further evaluation. Investors will finally select the finalists who will be given a chance to enter the finals of Pitchers Pilot. If a startup is selected for the finals, they will be required to pay a nominal fee to confirm their availability for the finals.'
+        'The selected startups might be required to submit further details to LAUNCHPAD `23, which will be redirected to our Investor panel for further evaluation. Investors will select the finalists who will be given a chance to enter the finals. If selected for the finals, they will be required to pay a nominal fee to confirm their availability for the finals. LAUNCHPAD `23 will provide accommodation to finalists.'
     },
     {
       id: 11,
@@ -36,7 +36,7 @@ function PitchersPilot() {
       questionid: 'qone',
       question: 'STAGE 3',
       answer:
-        'Top 7 startups selected from all the registered startups will be given a chance to pitch on the grand stage on Launchpad 22 live in front of our investor panel. Each session will be of 15-20 minutes where startups will be given 5 minutes to pitch and it will be followed by QnA round led by investors. If there are multiple offers, the startup can choose any one, all or neither of the offers. '
+        'The top 10 startups selected from all startups will be given a chance to pitch on the grand stage of Launchpad `23 live in front of our investor panel. Each session will be of 15-20 minutes, where startups will be given 5 minutes to pitch, and it will be followed by a Q&A round led by investors. If there are multiple offers, startups cant choose a single investor, and all the negotiations will take place back door. '
     },
 
     {
@@ -44,14 +44,14 @@ function PitchersPilot() {
       classy: 'three',
       questionid: 'qthree',
       question: 'How can I register for the competitions?',
-      answer: 'You can register on our website.'
+      answer: 'You can register on our website/unstop.'
     },
     {
       id: 6,
       classy: 'three',
       questionid: 'qthree',
       question: 'When is the last date?',
-      answer: 'The last date for registration will be updated soon.'
+      answer: 'The deadline is 10th March 2023'
     }
   ]
 

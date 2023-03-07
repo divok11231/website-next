@@ -50,9 +50,9 @@
 }
 .input {
   outline: none;
-  background-color: black;
+  background-color: rgba(0,0,0,0.7);
   border: none;
-  height: 3em;
+  height: 5em;
   margin-top: 10px;
   border: 1px solid black;
   border-radius: 5px;

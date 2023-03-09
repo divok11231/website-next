@@ -22,7 +22,7 @@ function TicketCard() {
 
     async function handleBuy() {
         const userId = email
-    const ticketId = '6405d576e6c0fce9e0c789a6'
+    const ticketId = '6409a6e1a0e08dd49a39a0c3'
   console.log(ticketId, '999')
   const res = await loadRazorpay()
   if (!res) {

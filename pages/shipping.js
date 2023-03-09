@@ -10,11 +10,11 @@ function shipping() {
       </Head>
       <div>
         <h1>Shipping Policy</h1>
-        E-Cell BPHC ("we" and "us") is the operator of
-        (https://www.ecellbphc.in) ("Website"). By placing an order through this
-        Website you will be agreeing to the terms below. These are provided to
-        ensure both parties are aware of and agree upon this arrangement to
-        mutually protect and set expectations on our service.
+        E-Cell BPHC is the operator of (https://www.ecellbphc.in). By placing an
+        order through this Website you will be agreeing to the terms below.
+        These are provided to ensure both parties are aware of and agree upon
+        this arrangement to mutually protect and set expectations on our
+        service.
         <h2>General</h2>
         <p>
           Subject to stock availability. We try to maintain accurate stock

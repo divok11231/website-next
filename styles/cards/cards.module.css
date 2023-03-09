@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+
+
+.mycard1 {
+  position: relative;
+  height: 500px;
+  width: 375px;
+  border-radius: 20px;
+  font-family: 'Lexend', sans-serif;
+  padding: 25px;
+  box-shadow: 0 35px 90px rgba(0,0,0,0.55);
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  /* box-sizing: border-box;
+  display: inline-block;
+  margin: 3%; */
+
+  /* background-image: url("/bg.jpg"); */
+}
+.cardtext1 {
+  position: absolute;
+  margin: auto;
+  color: white;
+  width: 87%;
+  top: 35%;
+  /* margin-left: 3%; */
+  font-family: 'Lexend', sans-serif;
+}
+.heading{
+  font-weight: 600;
+}
+/* .alignment {
+  display: flex !important;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+} */
+.cardbutton1 {
+  background-color: #150050;
+  color: #ffffff;
+  border: none;
+  border-radius: 18px;
+  padding: 11px 32px;
+}
+.btndiv1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 0 auto;
+  margin-top: 87.5%;
+}
+
+@media screen and (max-width:800px){
+  .mycard1{
+    /* width:90vw; */
+    transform:scale(0.98);
+    margin-left:1vw;
+  }
+}
+@media screen and (max-width:400px){
+  .mycard1{
+    width:95vw;
+    transform:scale(0.94);
+    /* background-position: -10vh; */
+    /* margin-left:3vw; */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}

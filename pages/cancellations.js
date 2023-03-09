@@ -55,13 +55,7 @@ function cancellation() {
           <li>
             <p>
               <strong>Website</strong> refers to E-Cell BPHC, accessible from{' '}
-              <a
-                href="http://www.ecellbphc.in"
-                rel="external nofollow noopener"
-                target="_blank"
-              >
-                http://www.ecellbphc.in
-              </a>
+              <a href="http://www.ecellbphc.in">http://www.ecellbphc.in</a>
             </p>
           </li>
           <li>

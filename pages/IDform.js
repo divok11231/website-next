@@ -16,62 +16,62 @@ function CAform() {
     code: ''
   })
 
-   function loadRazorpay() {
-     return new Promise((resolve) => {
-       const script = document.createElement("script");
-       script.src = "https://checkout.razorpay.com/v1/checkout.js";
-       script.onload = () => {
-         resolve(true);
-       };
-       script.onerror = () => {
-         resolve(false);
-       };
-       document.body.appendChild(script);
-     });
-   }
+  function loadRazorpay() {
+    return new Promise((resolve) => {
+      const script = document.createElement('script')
+      script.src = 'https://checkout.razorpay.com/v1/checkout.js'
+      script.onload = () => {
+        resolve(true)
+      }
+      script.onerror = () => {
+        resolve(false)
+      }
+      document.body.appendChild(script)
+    })
+  }
 
   async function handleBuy() {
     const userId = data.email
-     const ticketId = '6409afc9a0e08dd49a39a102'
-     console.log(ticketId, "999");
-     const res = await loadRazorpay();
-     if (!res) {
-       alert("Razorpay SDK failed to load");
-       return;
-     }
-     console.log(userId);
-     const order = await fetch(
-       `https://backend-api-2022.onrender.com/api/tickets/getOrderId/${ticketId}`,
-       {
-         method: "GET",
-       }
-     ).then((t) => t.json());
-     const options = {
-       key: 'rzp_live_FWRQdHoaQSe74v',
-       amount: order.amount.toString(),
-       currency: 'INR',
-       name: 'E-Cell BITS Hyderabad',
-       description: 'Test Transaction',
-       order_id: order.id,
-       callback_url: `http://localhost:3001/id/buy/${data.email}`,
-       theme: {
-         color: '#150050'
-       }
-     }
-    handleSubmit();
+    const ticketId = '6409afc9a0e08dd49a39a102'
+    console.log(ticketId, '999')
+    const res = await loadRazorpay()
+    if (!res) {
+      alert('Razorpay SDK failed to load')
+      return
+    }
+    console.log(userId)
+    const order = await fetch(
+      `https://backend-api-2022.onrender.com/api/tickets/getOrderId/${ticketId}`,
+      {
+        method: 'GET'
+      }
+    ).then((t) => t.json())
+    const options = {
+      key: 'rzp_live_FWRQdHoaQSe74v',
+      amount: order.amount.toString(),
+      currency: 'INR',
+      name: 'E-Cell BITS Hyderabad',
+      description: 'Internship Drive Transaction',
+      order_id: order.id,
+      callback_url: `http://localhost:3001/id/buy/${data.email}/${order.id}`,
+      theme: {
+        color: '#150050'
+      }
+    }
 
-     const rzp1 = new window.Razorpay(options);
-     rzp1.open();
-     rzp1.on("payment.failed", function (response) {
-       console.log(response.error.code);
-       console.log(response.error.description);
-       console.log(response.error.source);
-       console.log(response.error.step);
-       console.log(response.error.reason);
-       console.log(response.error.metadata.order_id);
-       console.log(response.error.metadata.payment_id);
-     });
-   }
+    const rzp1 = new window.Razorpay(options)
+    rzp1.open()
+    rzp1.on('payment.failed', function (response) {
+      console.log(response.error.code)
+      console.log(response.error.description)
+      console.log(response.error.source)
+      console.log(response.error.step)
+      console.log(response.error.reason)
+      console.log(response.error.metadata.order_id)
+      console.log(response.error.metadata.payment_id)
+    })
+    handleSubmit()
+  }
 
   // async function makeid() {
   //   // let result = "";
@@ -117,8 +117,8 @@ function CAform() {
     console.log(data)
   }
 
-    const handleSubmit = async () => {
-      console.log(data)
+  const handleSubmit = async () => {
+    console.log(data)
     const res = await axios
       .post('https://backend-api-2022.onrender.com/id/createID', {
         name: data.name,
@@ -130,11 +130,11 @@ function CAform() {
       })
       .then((res) => {
         console.log(res, 'ahuahuahu')
-        alert("data has been submitted successfully")
-//         window.location('https://www.ecellbphc.in/')
+        alert('data has been submitted successfully')
+        //         window.location('https://www.ecellbphc.in/')
       })
       .catch((err) => {
-        console.log("kata tera lode")
+        console.log('kata tera lode')
       })
   }
 
@@ -160,9 +160,7 @@ function CAform() {
       <form className={styles.form}>
         <div className={styles.row}>
           <div className={styles.column}>
-            <label className={styles.label} >
-              Name
-            </label>
+            <label className={styles.label}>Name</label>
             <input
               type="text"
               onChange={handleChange}
@@ -173,9 +171,7 @@ function CAform() {
             />
           </div>
           <div className={styles.column}>
-            <label className={styles.label} >
-              Email
-            </label>
+            <label className={styles.label}>Email</label>
             <input
               type="email"
               onChange={handleChange}
@@ -201,9 +197,7 @@ function CAform() {
             />
           </div>
           <div className={styles.column}>
-            <label className={styles.label} >
-              College Name
-            </label>
+            <label className={styles.label}>College Name</label>
             <input
               type="text"
               className={styles.input}
@@ -216,9 +210,7 @@ function CAform() {
         </div>
         <div className={styles.row}>
           <div className={styles.column}>
-            <label className={styles.label} >
-              City{' '}
-            </label>
+            <label className={styles.label}>City </label>
             <input
               className={styles.textarea}
               placeholder="City"
@@ -228,9 +220,7 @@ function CAform() {
             />
           </div>
           <div className={styles.column}>
-            <label className={styles.label} >
-              Year of Graduation
-            </label>
+            <label className={styles.label}>Year of Graduation</label>
             <input
               type="text"
               className={styles.input}

@@ -20,7 +20,7 @@ function PitchersPilot() {
       questionid: 'qone',
       question: 'STAGE 1',
       answer:
-        'Startups will register for the event through our online portal with all the required submission. Top 50 pitch decks will be selected for the next round. Decision for the same will completely rest upon the discretion of LAUNCHPAD `22 Organizing Committee.Results will be announced via mail.'
+        'Startups will register for the event through our online portal with all the required submission. Top 50 pitch decks will be selected for the next round. Decision for the same will completely rest upon the discretion of LAUNCHPAD `23 Organizing Committee.Results will be announced via mail.'
     },
     {
       id: 8,
@@ -28,7 +28,7 @@ function PitchersPilot() {
       questionid: 'qone',
       question: 'STAGE 2',
       answer:
-        'The selected startups might be required to submit further details to LAUNCHPAD `22 which will be redirected to our Investor panel for further evaluation. Investors will finally select the finalists who will be given a chance to enter the finals of Pitchers Pilot. If a startup is selected for the finals, they will be required to pay a nominal fee to confirm their availability for the finals.'
+        'The selected startups might be required to submit further details to LAUNCHPAD `23, which will be redirected to our Investor panel for further evaluation. Investors will select the finalists who will be given a chance to enter the finals. If selected for the finals, they will be required to pay a nominal fee to confirm their availability for the finals. LAUNCHPAD `23 will provide accommodation to finalists.'
     },
     {
       id: 11,
@@ -36,7 +36,7 @@ function PitchersPilot() {
       questionid: 'qone',
       question: 'STAGE 3',
       answer:
-        'Top 7 startups selected from all the registered startups will be given a chance to pitch on the grand stage on Launchpad 22 live in front of our investor panel. Each session will be of 15-20 minutes where startups will be given 5 minutes to pitch and it will be followed by QnA round led by investors. If there are multiple offers, the startup can choose any one, all or neither of the offers. '
+        'The top 10 startups selected from all startups will be given a chance to pitch on the grand stage of Launchpad `23 live in front of our investor panel. Each session will be of 15-20 minutes, where startups will be given 5 minutes to pitch, and it will be followed by a Q&A round led by investors.'
     },
 
     {
@@ -44,20 +44,20 @@ function PitchersPilot() {
       classy: 'three',
       questionid: 'qthree',
       question: 'How can I register for the competitions?',
-      answer: 'You can register on our website.'
+      answer: 'You can register on our website/unstop.'
     },
     {
       id: 6,
       classy: 'three',
       questionid: 'qthree',
       question: 'When is the last date?',
-      answer: 'The last date for registration will be updated soon.'
+      answer: 'The deadline is 10th March 2023'
     }
   ]
 
   const [register, setRegister] = useState(false)
 
-  const [cost, setCost] = useState(1)
+  const [cost, setCost] = useState(1000)
   const [coupon, setCoupon] = useState('')
   const [couponText, setCouponText] = useState('Apply Coupon')
 
@@ -177,7 +177,7 @@ function PitchersPilot() {
     if (cost === 0) {
       axios
         .post(
-          'https://sheet.best/api/sheets/d68e5eb7-b020-4005-8026-b9a74c3c0a2c',
+          'https://sheet.best/api/sheets/32e90bd5-af25-42e6-b3a5-ee58f57f6cc6',
           formdata
         )
         .then(
@@ -189,7 +189,7 @@ function PitchersPilot() {
       await showRazorpay().then(
         axios
           .post(
-            'https://sheet.best/api/sheets/d68e5eb7-b020-4005-8026-b9a74c3c0a2c',
+            'https://sheet.best/api/sheets/32e90bd5-af25-42e6-b3a5-ee58f57f6cc6',
             formdata
           )
           .then(
@@ -257,13 +257,13 @@ function PitchersPilot() {
     e.preventDefault()
     setCoupon(e.target.value)
     if (coupon === 'SPECIAL') {
-      setCost(0)
+      setCost(1000)
       setCouponText('Coupon Applied')
     } else if (coupon === 'PP50') {
-      setCost(250)
+      setCost(1000)
       setCouponText('Coupon Applied')
     } else if (coupon === 'LUCKY50') {
-      setCost(150)
+      setCost(1000)
       setCouponText('Coupon Applied')
     } else if (coupon === '') {
       setCost(1000)
@@ -300,7 +300,7 @@ function PitchersPilot() {
             seeking funds and mentorship to pitch their ideas directly to our
             esteemed panel, who can choose to invest in the company based on
             their reasoning. Touted as the central attraction of Launchpad
-            &apos;21, startups from all across the country, including various
+            &apos;23, startups from all across the country, including various
             prestigious universities, will be hosted to contest the event.
           </div>
           <div className={styles.container_fluid}>
@@ -368,7 +368,7 @@ function PitchersPilot() {
                     {
                       setCoupon(e.target.value)
                       setCouponText('Apply Coupon')
-                      setCost(300)
+                      setCost(1000)
                     }
                   }}
                 />

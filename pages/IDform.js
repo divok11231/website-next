@@ -53,7 +53,7 @@ function CAform() {
       name: 'E-Cell BITS Hyderabad',
       description: 'Internship Drive Transaction',
       order_id: order.id,
-      callback_url: `http://localhost:3001/id/buy/${data.email}/${order.id}`,
+      callback_url: `https://backend-api-2022.onrender.com/id/buy/${data.email}/${order.id}`,
       theme: {
         color: '#150050'
       }

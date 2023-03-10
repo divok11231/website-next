@@ -68,6 +68,7 @@ function TicketCard() {
             <div className={s.head}>Executive Pass</div>
             <div className={s.inputs}>
               <div className={s.label}>Registered Email ID : </div>
+              <div className={s.label2}>{'('}Make sure this email perfectly matches with your registered email{ ')'}</div>
               <input
                 name="email"
                 className={s.input}

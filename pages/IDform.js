@@ -32,7 +32,7 @@ function CAform() {
 
   async function handleBuy() {
     const userId = data.email
-    const ticketId = '6409afc9a0e08dd49a39a102'
+    const ticketId = '6409a521a0e08dd49a39a094'
     console.log(ticketId, '999')
     const res = await loadRazorpay()
     if (!res) {

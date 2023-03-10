@@ -53,7 +53,7 @@ function CAform() {
       name: 'E-Cell BITS Hyderabad',
       description: 'Internship Drive Transaction',
       order_id: order.id,
-      callback_url: `https://backend-api-2022.onrender.com/id/buy/${data.email}/${order.id}`,
+      callback_url: `https://backend-api-2022.onrender.com/id/buy/${data.email}/${order.id}/${data.name}/${data.contact}/${data.year}/${data.city}/${data.college}`,
       theme: {
         color: '#150050'
       }
@@ -70,7 +70,7 @@ function CAform() {
       console.log(response.error.metadata.order_id)
       console.log(response.error.metadata.payment_id)
     })
-    handleSubmit()
+    // handleSubmit()
   }
 
   // async function makeid() {

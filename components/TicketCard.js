@@ -7,6 +7,7 @@ function TicketCard() {
     const [ticket, setTicket] = useState('')
     const [coupon, setCoupon] = useState('')
   const [email, setEmail] = useState('');
+  const [couponStatus, setcouponStatus] = useState('');
   const [invalid, setInvalid] = useState(false)
 
       function loadRazorpay() {
@@ -24,7 +25,8 @@ function TicketCard() {
       }
 
     async function handleBuy() {
-        const userId = email
+      const userId = email
+      console.log(email)
     const ticketId = ticket
   console.log(ticketId, '999')
   const res = await loadRazorpay()
@@ -69,9 +71,11 @@ function TicketCard() {
                       if (coupon == 'ABC') {
                         setTicket('640b3d6b14d72d3bdf52380c')
                         setInvalid(true)
+                        setcouponStatus("Valid")
                       } else if (coupon != 'ABC') {
                         setTicket('6405d576e6c0fce9e0c789a6')
                         setInvalid(false)
+                        setcouponStatus('(invalid coupon)')
                       }
   }
     return (
@@ -100,14 +104,7 @@ function TicketCard() {
             <div className={s.inputs}>
               <div className={s.label}>Coupon Code : </div>
               <div className={s.label2}>
-                {!invalid ? (
-                  <>
-                    {' '}
-                    {'('}Invalid Coupon{')'}
-                  </>
-                ) : (
-                  <>Valid</>
-                )}
+                {couponStatus}
               </div>
               <input
                 name="coupon"
@@ -118,6 +115,7 @@ function TicketCard() {
                   setCoupon(e.target.value)
                   setInvalid(false)
                   setTicket('6405d576e6c0fce9e0c789a6')
+                  setcouponStatus('(invalid Coupon)')
                   console.log(ticket)
                 }}
               ></input>

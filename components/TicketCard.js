@@ -4,7 +4,10 @@ import { useState } from 'react';
 
 function TicketCard() {
 
-    const [email, setEmail] = useState('');
+    const [ticket, setTicket] = useState('')
+    const [coupon, setCoupon] = useState('')
+  const [email, setEmail] = useState('');
+  const [invalid, setInvalid] = useState(false)
 
       function loadRazorpay() {
         return new Promise((resolve) => {
@@ -22,7 +25,7 @@ function TicketCard() {
 
     async function handleBuy() {
         const userId = email
-    const ticketId = '6409a6e1a0e08dd49a39a0c3'
+    const ticketId = ticket
   console.log(ticketId, '999')
   const res = await loadRazorpay()
   if (!res) {
@@ -60,7 +63,17 @@ function TicketCard() {
     console.log(response.error.metadata.order_id)
     console.log(response.error.metadata.payment_id)
   })
-}
+  }
+  
+  const handleCoupon = () => {
+                      if (coupon == 'ABC') {
+                        setTicket('640b3d6b14d72d3bdf52380c')
+                        setInvalid(true)
+                      } else if (coupon != 'ABC') {
+                        setTicket('6405d576e6c0fce9e0c789a6')
+                        setInvalid(false)
+                      }
+  }
     return (
       <>
         <div className={s.container}>
@@ -68,7 +81,10 @@ function TicketCard() {
             <div className={s.head}>Executive Pass</div>
             <div className={s.inputs}>
               <div className={s.label}>Registered Email ID : </div>
-              <div className={s.label2}>{'('}Make sure this email perfectly matches with your registered email{ ')'}</div>
+              <div className={s.label2}>
+                {'('}Make sure this email perfectly matches with your registered
+                email{')'}
+              </div>
               <input
                 name="email"
                 className={s.input}
@@ -76,12 +92,45 @@ function TicketCard() {
                 value={email}
                 onChange={(e) => {
                   setEmail(e.target.value)
+                  setInvalid(true)
                   console.log(email)
                 }}
               ></input>
             </div>
+            <div className={s.inputs}>
+              <div className={s.label}>Coupon Code : </div>
+              <div className={s.label2}>
+                {!invalid ? (
+                  <>
+                    {' '}
+                    {'('}Invalid Coupon{')'}
+                  </>
+                ) : (
+                  <>Valid</>
+                )}
+              </div>
+              <input
+                name="coupon"
+                className={s.input}
+                placeholder={invalid}
+                value={coupon}
+                onChange={(e) => {
+                  setCoupon(e.target.value)
+                  setInvalid(false)
+                  setTicket('6405d576e6c0fce9e0c789a6')
+                  console.log(ticket)
+                }}
+              ></input>
+            </div>
 
-            <div onClick={handleBuy} className={s.buy}>buy ticket</div>
+  
+            <div onClick={handleCoupon} className={s.buy}>
+              Apply Coupon
+            </div>
+
+            <div onClick={handleBuy} className={s.buy}>
+              buy ticket
+            </div>
           </div>
         </div>
       </>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import styles from '../styles/Id/id.module.css'
+import styles from '../styles/id/id.module.css'
 import axios from 'axios'
 
 function CAform() {

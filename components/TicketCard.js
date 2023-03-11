@@ -68,11 +68,11 @@ function TicketCard() {
   }
   
   const handleCoupon = () => {
-                      if (coupon == 'ABC') {
+                      if (coupon == 'BITSCVR') {
                         setTicket('640b3d6b14d72d3bdf52380c')
                         setInvalid(true)
                         setcouponStatus("Valid")
-                      } else if (coupon != 'ABC') {
+                      } else if (coupon != 'BITSCVR') {
                         setTicket('6405d576e6c0fce9e0c789a6')
                         setInvalid(false)
                         setcouponStatus('(invalid coupon)')

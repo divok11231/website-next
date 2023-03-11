@@ -3,7 +3,8 @@ import styles from '../styles/id/id.module.css'
 import axios from 'axios'
 
 function CAform() {
-  const [getCode, setget] = useState(false)
+  const [valid, setvalid] = useState('')
+  const [tic, setTic] = useState('6409a521a0e08dd49a39a094')
   const [code, setCode] = useState('')
   const [data, setData] = useState({
     name: '',
@@ -32,7 +33,7 @@ function CAform() {
 
   async function handleBuy() {
     const userId = data.email
-    const ticketId = '6409a521a0e08dd49a39a094'
+    const ticketId = tic
     console.log(ticketId, '999')
     const res = await loadRazorpay()
     if (!res) {
@@ -231,6 +232,39 @@ function CAform() {
             />
           </div>
         </div>
+        <div className={styles.row}>
+          <div className={styles.column}>
+            <label className={styles.label}>Coupon Code :</label>
+            <label className={styles.label2}>{valid}</label>
+            <input
+              className={styles.textarea}
+              placeholder="Code"
+              name="code"
+              value={code}
+              onChange={(e) => {
+                setvalid('Invalid Code')
+                setTic('6409a521a0e08dd49a39a094')
+                setCode(e.target.value)
+              }}
+            />
+          </div>
+          <div className={styles.column}>
+            <div
+              className={styles.button2}
+              onClick={() => {
+                if (code == 'BITSCVR') {
+                  setTic('640c31f90b8f24b76a327157')
+                  setvalid('Valid')
+                } else if (code != 'BITSCVR') {
+                  setTic('6409a521a0e08dd49a39a094')
+                  setvalid('Invalid code')
+                }
+              }}
+            >
+              Verify Code
+            </div>
+          </div>
+        </div>
         {/* <div className={styles.row}>
           <div className={styles.column}>
             This is Your code :{' '}
@@ -258,7 +292,7 @@ function CAform() {
           </div>
         </div> */}
         <div className={styles.button} onClick={handleBuy}>
-          Submit
+          Pay & Register
         </div>
       </form>
     </div>

@@ -26,6 +26,12 @@ export default function Navbar(props) {
           </Link>
         </div>
         <div className={Navbarcss.buttons}>
+          <Link href="/IDform">
+            <a className={Navbarcss.button}>Internship Drive</a>
+          </Link>
+          <Link href="/pitchersPilot">
+            <a className={Navbarcss.button}>Pitcher&apos;s Pilot</a>
+          </Link>
           <Link href="/CAform">
             <a className={Navbarcss.button}>CA Program</a>
           </Link>
@@ -37,10 +43,6 @@ export default function Navbar(props) {
           >
             Community
           </a>
-          <Link href="/blog">
-            <a className={Navbarcss.button}>Blog</a>
-          </Link>
-
           <Link href="/about">
             <a className={Navbarcss.button}>About us</a>
           </Link>
@@ -53,14 +55,7 @@ export default function Navbar(props) {
             >
               Internship Drive
             </a>
-          </Link> */}
-          {' '}
-          <Link href="/pitchersPilot">
-          <a className={Navbarcss.button}>
-             Pitcher&apos;s Pilot
-            </a>
-          </Link>{' '}
-          
+          </Link> */}{' '}
           {/*<Link href="/welcome/signup">
             <a className={(Navbarcss.button, Navbarcss.rightmostbutton)}>
               Sign Up
@@ -100,6 +95,16 @@ export default function Navbar(props) {
             </a>
           </Link>
         </div>
+        <Link href="/IDform">
+          <a onClick={() => handleClick()} className={Navbarcss.mobilebtn}>
+            Internship Drive
+          </a>
+        </Link>
+        <Link href="/pitchersPilot">
+          <a onClick={() => handleClickID()} className={Navbarcss.mobilebtn}>
+            Pitchers Pilot
+          </a>
+        </Link>
         <Link href="/CAform">
           <a onClick={() => handleClick()} className={Navbarcss.mobilebtn}>
             CA form
@@ -114,19 +119,10 @@ export default function Navbar(props) {
         >
           Community
         </a>
-        <Link href="/blog">
-          <a onClick={() => handleClick()} className={Navbarcss.mobilebtn}>
-            Blog
-          </a>
-        </Link>
+
         <Link href="/about">
           <a onClick={() => handleClick()} className={Navbarcss.mobilebtn}>
             About Us
-          </a>
-        </Link>
-        <Link href="/pitchersPilot">
-          <a onClick={() => handleClickID()} className={Navbarcss.mobilebtn}>
-           Pitchers Pilot
           </a>
         </Link>
 

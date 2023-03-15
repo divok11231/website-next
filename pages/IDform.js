@@ -232,39 +232,39 @@ function CAform() {
             />
           </div>
         </div>
-//         <div className={styles.row}>
-//           <div className={styles.column}>
-//             <label className={styles.label}>Coupon Code :</label>
-//             <label className={styles.label2}>{valid}</label>
-//             <input
-//               className={styles.textarea}
-//               placeholder="Code"
-//               name="code"
-//               value={code}
-//               onChange={(e) => {
-//                 setvalid('Invalid Code')
-//                 setTic('6409a521a0e08dd49a39a094')
-//                 setCode(e.target.value)
-//               }}
-//             />
-//           </div>
-//           <div className={styles.column}>
-//             <div
-//               className={styles.button2}
-//               onClick={() => {
-//                 if (code == 'BITSCVR') {
-//                   setTic('640c31f90b8f24b76a327157')
-//                   setvalid('Valid')
-//                 } else if (code != 'BITSCVR') {
-//                   setTic('6409a521a0e08dd49a39a094')
-//                   setvalid('Invalid code')
-//                 }
-//               }}
-//             >
-//               Verify Code
-//             </div>
-//           </div>
-//         </div>
+        {/*<div className={styles.row}>
+          <div className={styles.column}>
+            <label className={styles.label}>Coupon Code :</label>
+            <label className={styles.label2}>{valid}</label>
+            <input
+              className={styles.textarea}
+              placeholder="Code"
+              name="code"
+              value={code}
+              onChange={(e) => {
+                setvalid('Invalid Code')
+                setTic('6409a521a0e08dd49a39a094')
+                setCode(e.target.value)
+              }}
+            />
+          </div>
+          <div className={styles.column}>
+            <div
+              className={styles.button2}
+              onClick={() => {
+                if (code == 'BITSCVR') {
+                  setTic('640c31f90b8f24b76a327157')
+                  setvalid('Valid')
+                } else if (code != 'BITSCVR') {
+                  setTic('6409a521a0e08dd49a39a094')
+                  setvalid('Invalid code')
+                }
+              }}
+            >
+              Verify Code
+            </div>
+          </div>
+        </div> */}
         {/* <div className={styles.row}>
           <div className={styles.column}>
             This is Your code :{' '}

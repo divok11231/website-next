@@ -232,7 +232,7 @@ function CAform() {
             />
           </div>
         </div>
-        <div className={styles.row}>
+        {/*<div className={styles.row}>
           <div className={styles.column}>
             <label className={styles.label}>Coupon Code :</label>
             <label className={styles.label2}>{valid}</label>
@@ -264,7 +264,7 @@ function CAform() {
               Verify Code
             </div>
           </div>
-        </div>
+        </div> */}
         {/* <div className={styles.row}>
           <div className={styles.column}>
             This is Your code :{' '}

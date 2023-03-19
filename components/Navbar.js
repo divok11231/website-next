@@ -32,8 +32,8 @@ export default function Navbar(props) {
           <Link href="/pitchersPilot">
             <a className={Navbarcss.button}>Pitcher&apos;s Pilot</a>
           </Link>
-          <Link href="/CAform">
-            <a className={Navbarcss.button}>CA Program</a>
+          <Link href="https://launchpad23.vercel.app/">
+            <a className={Navbarcss.button}>Launchpad</a>
           </Link>
           <a
             className={Navbarcss.button}
@@ -105,9 +105,9 @@ export default function Navbar(props) {
             Pitchers Pilot
           </a>
         </Link>
-        <Link href="/CAform">
+        <Link href="https://launchpad23.vercel.app/">
           <a onClick={() => handleClick()} className={Navbarcss.mobilebtn}>
-            CA form
+            Launchpad 23
           </a>
         </Link>
         <a

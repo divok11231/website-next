@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 function TicketCard() {
 
-    const [ticket, setTicket] = useState('')
+    const [ticket, setTicket] = useState('6405d576e6c0fce9e0c789a6')
     const [coupon, setCoupon] = useState('')
   const [email, setEmail] = useState('');
   const [couponStatus, setcouponStatus] = useState('');

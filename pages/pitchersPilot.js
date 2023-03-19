@@ -259,8 +259,8 @@ function PitchersPilot() {
     if (coupon === 'SPECIAL') {
       setCost(1000)
       setCouponText('Coupon Applied')
-    } else if (coupon === 'PP50') {
-      setCost(1000)
+    } else if (coupon === 'SPL200') {
+      setCost(800)
       setCouponText('Coupon Applied')
     } else if (coupon === 'LUCKY50') {
       setCost(1000)

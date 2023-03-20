@@ -26,7 +26,7 @@ export default function Navbar(props) {
           </Link>
         </div>
         <div className={Navbarcss.buttons}>
-          <Link href="/IDform">
+          <Link href="/internshipDriveReg">
             <a className={Navbarcss.button}>Internship Drive</a>
           </Link>
           <Link href="/pitchersPilot">
@@ -95,7 +95,7 @@ export default function Navbar(props) {
             </a>
           </Link>
         </div>
-        <Link href="/IDform">
+        <Link href="/internshipDriveReg">
           <a onClick={() => handleClick()} className={Navbarcss.mobilebtn}>
             Internship Drive
           </a>

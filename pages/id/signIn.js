@@ -73,7 +73,7 @@ const SignIn = () => {
               type="password"
               className={styles.inputField}
               name="pass"
-              placeholder="password"
+              placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />

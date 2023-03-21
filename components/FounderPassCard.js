@@ -3,7 +3,7 @@ import s from '../styles/tic.module.css'
 import { useState } from 'react'
 
 function TicketCard() {
-  const [ticket, setTicket] = useState('6405d576e6c0fce9e0c789a6')
+  const [ticket, setTicket] = useState('6405d765e6c0fce9e0c789ab')
   const [coupon, setCoupon] = useState('')
   const [email, setEmail] = useState('')
   const [couponStatus, setcouponStatus] = useState('')
@@ -67,12 +67,12 @@ function TicketCard() {
   }
 
   const handleCoupon = () => {
-    if (coupon == 'BITSCVR') {
-      setTicket('640b3d6b14d72d3bdf52380c')
+    if (coupon == 'R2GR') {
+      setTicket('6419dc7e6fc171fa30885558')
       setInvalid(true)
       setcouponStatus('Valid')
-    } else if (coupon != 'BITSCVR') {
-      setTicket('6405d576e6c0fce9e0c789a6')
+    } else if (coupon != 'R2GR') {
+      setTicket('6405d765e6c0fce9e0c789ab')
       setInvalid(false)
       setcouponStatus('(invalid coupon)')
     }
@@ -111,7 +111,7 @@ function TicketCard() {
               onChange={(e) => {
                 setCoupon(e.target.value)
                 setInvalid(false)
-                setTicket('6405d576e6c0fce9e0c789a6')
+                setTicket('6405d765e6c0fce9e0c789ab')
                 setcouponStatus('(invalid Coupon)')
                 console.log(ticket)
               }}

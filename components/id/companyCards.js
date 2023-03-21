@@ -5,7 +5,7 @@ import launchpad from '../../assets/Launchpad.png'
 import { useSession } from 'next-auth/react'
 import axios from 'axios'
 
-function CompanyCards({email, session, status}) {
+function CompanyCards({email, session, status, paid}) {
   // const { data: session, status } = useSession()
   const [datas, setData] = useState([])
   useEffect(() => {
@@ -126,14 +126,20 @@ function CompanyCards({email, session, status}) {
                   >
                     Job Description
                   </a>
-                  <div>
-                    <button
-                      className={styles.button}
-                      onClick={(e) => e.preventDefault(applyNow(data._id))}
-                    >
-                      Apply Now
-                    </button>
-                  </div>
+                  {paid ? (
+                    <>
+                      <div>
+                        <button
+                          className={styles.button}
+                          onClick={(e) => e.preventDefault(applyNow(data._id))}
+                        >
+                          Apply Now
+                        </button>
+                      </div>
+                    </>
+                  ) : (
+                    <></>
+                  )}
                 </div>
               </div>
               {/* <Auth prop={data} /> */}

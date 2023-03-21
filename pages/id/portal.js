@@ -64,20 +64,16 @@ export default function Home() {
               </div> */}
               {status === 'authenticated' ? (
                 <Link href="/id/profile">
-                  <button className={styles.portalbtn}>
-                    My Profile
-                  </button>
+                  <button className={styles.portalbtn}>My Profile</button>
                 </Link>
               ) : (
-                <button
-                  className={styles.dashbtn}
-                  onClick={(e) => {
-                    e.preventDefault()
-                    window.locatation.href = 'http://localhost:3000/id/signIn'
-                  }}
-                >
-                  Login
-                </button>
+                <Link href="https://www.ecellbphc.in/id/signIn">
+                  <button
+                    className={styles.dashbtn}
+                  >
+                    Login
+                  </button>
+                </Link>
               )}
               {/* <button className={styles.portalbtn}>Redirect to Portal</button> */}
             </div>

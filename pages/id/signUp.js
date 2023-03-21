@@ -23,7 +23,7 @@ const SignUp = () => {
         }
 
         await fetch('https://backend-api-2022.onrender.com/api/auth/register', options).then(res => res.json()).then((data) => {
-            if(data) router.push('http://localhost:3000/id/portal')
+            if(data) router.push('http://localhost:3000/id/signIn')
         })
     }
 
@@ -65,46 +65,6 @@ const SignUp = () => {
               value={data.password}
               onChange={handleChange}
               placeholder="Password"
-            />
-          </div>
-          <div className={styles.input}>
-            <input
-              type="text"
-              className={styles.inputField}
-              name="college"
-              onChange={handleChange}
-              value={data.college}
-              placeholder="College Name"
-            />
-          </div>
-          <div className={styles.input}>
-            <input
-              type="text"
-              className={styles.inputField}
-              onChange={handleChange}
-              name="year"
-              value={data.year}
-              placeholder="Year of Study"
-            />
-          </div>
-          <div className={styles.input}>
-            <input
-              type="text"
-              className={styles.inputField}
-              onChange={handleChange}
-              name="contact"
-              value={data.contact}
-              placeholder="Contact Number"
-            />
-          </div>
-          <div className={styles.input}>
-            <input
-              type="text"
-              className={styles.inputField}
-              onChange={handleChange}
-              name="city"
-              value={data.city}
-              placeholder="City"
             />
           </div>
           <div className={styles.butn} onClick={handleSubmit}>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 import { v4 as uuidv4 } from 'uuid'
-
+import axios from 'axios'
 import CompanyCards from '../../components/id/companyCards'
 import AppliedCards from '../../components/id/appliedCards'
 import styles from '../../styles/id/viewcompany.module.css'
@@ -18,6 +18,8 @@ function ViewCompany() {
     })
     const [email, setEmail] = useState('')
 
+  const [paid, setPaid] = useState(false)
+
   useEffect(() => {
                 setStatus(localStorage.getItem('status'))
                 setSession({
@@ -25,6 +27,12 @@ function ViewCompany() {
                   token: localStorage.getItem('token')
                 })
                 setEmail(localStorage.getItem('email'))
+
+                const paid = axios.post(
+                  'http://localhost:3001/api/auth/getUser',
+                  {email : email}
+    )
+    setPaid(paid)
   },[])
 
   const handleClass = (toggle) => {
@@ -88,7 +96,7 @@ function ViewCompany() {
       </div>
       <div className={styles.AllCards}>
         <div className={handleClass(toggle)}>
-          <CompanyCards email={email} session={session} status={status} />
+          <CompanyCards email={email} session={session} status={status} paid={paid} />
         </div>
         <div className={handleClass2(toggle)}>
           <AppliedCards

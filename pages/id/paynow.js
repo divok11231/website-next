@@ -49,12 +49,12 @@ function Paynow() {
 
   // const { data: session, status } = useSession()
   useEffect(() => {
-            setStatus(localStorage.getItem('status'))
-            setSession({
-              _id: localStorage.getItem('userid'),
-              token: localStorage.getItem('token')
-            })
-            setEmail(localStorage.getItem('email'))
+            // setStatus(localStorage.getItem('status'))
+            // setSession({
+            //   _id: localStorage.getItem('userid'),
+            //   token: localStorage.getItem('token')
+            // })
+            // setEmail(localStorage.getItem('email'))
     if (session) {
       console.log('something', session)
       // return (

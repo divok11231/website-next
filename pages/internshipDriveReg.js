@@ -55,6 +55,11 @@ function CAform() {
       description: 'Internship Drive Transaction',
       order_id: order.id,
       callback_url: `https://backend-api-2022.onrender.com/id/buy/${data.email}/${order.id}/${data.name}/${data.contact}/${data.year}/${data.city}/${data.college}`,
+      handler: function (response) {
+        localStorage.setItem('auth', true)
+        localStorage.setItem('email', data.email)
+        alert('Success!')
+      },
       theme: {
         color: '#150050'
       }

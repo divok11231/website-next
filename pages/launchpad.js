@@ -8,13 +8,12 @@ import { useEffect } from 'react'
 export default function Esummit({ setrender }) {
   useEffect(() => {
     window.location.href = 'https://launchpad23.vercel.app/'
-  },[])
+  }, [])
   return (
     <>
       <Head>
         <title>Launchpad | E-Cell BPHC </title>
       </Head>
-
       Please wait, we are taking you to the Launchpad!
       {/* <Launchpad prop={setrender} />
       <Cards /> */}

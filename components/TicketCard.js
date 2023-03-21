@@ -81,7 +81,7 @@ function TicketCard() {
     <>
       <div className={s.container}>
         <div className={s.card}>
-          <div className={s.head}>Founders Pass</div>
+          <div className={s.head}>Executive Pass</div>
           <div className={s.inputs}>
             <div className={s.label}>Registered Email ID : </div>
             <div className={s.label2}>

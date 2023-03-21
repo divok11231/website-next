@@ -5,7 +5,7 @@ import Events_Card from '../components/Events Cards/Event Card.jsx'
 import axios from 'axios'
 import Card from '../components/Events Cards/Card2.jsx'
 import s from '../styles/Card/cc.module.css'
-import TicketCard from '../components/TicketCard'
+import TicketCard from '../components/FounderPassCard'
 
 function Tickets() {
   const [ticket, setTic] = useState([])

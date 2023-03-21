@@ -68,10 +68,16 @@ function TicketCard() {
 
   const handleCoupon = () => {
     if (coupon == 'R2GR') {
+      //50% discount
       setTicket('6419dc7e6fc171fa30885558')
       setInvalid(true)
       setcouponStatus('Valid')
-    } else if (coupon != 'R2GR') {
+    } else if (coupon == 'FIRST') {
+      //100 discount
+      setTicket('6419f224126902f59b3fa701')
+      setInvalid(true)
+      setcouponStatus('Valid')
+    } else {
       setTicket('6405d765e6c0fce9e0c789ab')
       setInvalid(false)
       setcouponStatus('(invalid coupon)')

@@ -9,7 +9,15 @@ import ClipLoader from 'react-spinners/ClipLoader'
 import axios from 'axios'
 
 function Profile() {
-  const { data: session, status } = useSession()
+  // const { data: session, status } = useSession()
+
+  const [session, setSessions] = useState({
+    _id: '',
+    token: ''
+  })
+
+  const [email, setEmail] = useState('')
+  const [status, setStatus] = useState('')
 
   const [selectedFile, setSelectedFile] = useState(null)
   const [fileName, setFileName] = useState(null)
@@ -18,12 +26,16 @@ function Profile() {
   const [value, setValue] = useState(26500)
 
   useEffect(() => {
+    setStatus(localStorage.getItem('status'))
+    setEmail(localStorage.getItem('email'))
+    setSessions({ token: localStorage.getItem('token'), _id: localStorage.getItem('userid') })
+    
     async function get() {
       axios
         .post(
           'https://backend-api-2022.onrender.com/api/payments/getPaymentStatus',
           {
-            email: session.user.email
+            email: email
           }
         )
         .then((res) => {
@@ -35,7 +47,7 @@ function Profile() {
           console.log(err)
         })
     }
-    if (status === 'authenticated' && session.user.email) {
+    if (status === 'authenticated' && email) {
       get()
     }
   }, [])
@@ -43,7 +55,7 @@ function Profile() {
   const [userData, setUserData] = useState({
     name: '',
     email: '',
-    phoneNumber: '',
+    contact: '',
     college: '',
     yos: '',
     resumeURL: '',
@@ -147,10 +159,10 @@ function Profile() {
     if (status === 'authenticated') {
       axios
         .get(
-          `https://backend-api-2022.onrender.com/api/users/${session.user._id}`,
+          `https://backend-api-2022.onrender.com/api/users/${session._id}`,
           {
             headers: {
-              Authorization: `Bearer ${session.accessToken}`
+              Authorization: `Bearer ${session.token}`
             }
           }
         )
@@ -159,7 +171,7 @@ function Profile() {
             ...userData,
             name: res.data.data.name,
             email: res.data.data.email,
-            phoneNumber: res.data.data.phoneNumber,
+            contact: res.data.data.contact,
             college: res.data.data.college,
             yos: res.data.data.yos,
             resumeURL: res.data.data.resumeURL
@@ -186,7 +198,7 @@ function Profile() {
         userData,
         {
           headers: {
-            Authorization: `Bearer ${session.accessToken}`
+            Authorization: `Bearer ${session.token}`
           }
         }
       )
@@ -235,7 +247,7 @@ function Profile() {
           data: fileData,
           headers: {
             'Content-Type': 'multipart/form-data',
-            Authorization: `Bearer ${session.accessToken}`
+            Authorization: `Bearer ${session.token}`
           }
         })
           .then((res) => {
@@ -300,9 +312,9 @@ function Profile() {
                   type="text"
                   className={styles.inputbox}
                   placeholder="Enter your Phone"
-                  value={userData.phoneNumber}
+                  value={userData.contact}
                   onChange={(e) => {
-                    setUserData({ ...userData, phoneNumber: e.target.value })
+                    setUserData({ ...userData, contact: e.target.value })
                   }}
                 />
               </div>

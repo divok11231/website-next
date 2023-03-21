@@ -9,7 +9,7 @@ import CompCards from '../../components/id/comCards'
 import ReactPlayer from 'react-player'
 import { useEffect, useState } from 'react'
 import { useSession } from 'next-auth/react'
-import { signIn, signOut } from 'next-auth/react'
+// import { signIn, signOut } from 'next-auth/react'
 
 export default function Home() {
   const [playing, setPlaying] = useState(false)
@@ -23,10 +23,19 @@ export default function Home() {
     setTimeout(videoplay, 7)
   }, [])
 
-  const { data: session, status } = useSession()
+  const [session, setSession] = useState({
+    _id: '',
+    token: '',
+  })
+  const [status, setStatus] = useState(false)
+  // const { data: session, status } = useSession()
   useEffect(() => {
-    console.log(session)
-    console.log(status)
+    session._id = localStorage.getItem('userid')
+    session.token = localStorage.getItem('token')
+    setStatus(localStorage.getItem('status'))
+    // console.log(session)
+    // console.log(status)
+    
     if (session) {
       console.log('something', session)
       // return (
@@ -64,9 +73,7 @@ export default function Home() {
                   className={styles.dashbtn}
                   onClick={(e) => {
                     e.preventDefault()
-                    signIn(null, {
-                      callbackUrl: '/id/profile'
-                    })
+                    window.locatation.href = 'http://localhost:3000/id/signIn'
                   }}
                 >
                   Login

@@ -10,7 +10,7 @@ import axios from 'axios'
 import { useSession } from 'next-auth/react'
 import { stat } from 'fs'
 
-function Navbar() {
+function Navbar({email, session, status}) {
   const [hamOn, setHamOn] = useState(true)
   const [paids, setPaid] = useState(false)
 
@@ -34,10 +34,17 @@ function Navbar() {
     })
   }
 
-  const { data: session, status } = useSession()
+  // const { data: session, status } = useSession()
+  // const [status, setStatus] = useState('')
+  // const [session, setSession] = useState({
+  //   _id: '',
+  //   token: ''
+  // })
+  // const [email, setEmail] = useState('')
   useEffect(() => {
-    console.log(session)
-    console.log(status)
+    // setStatus(localStorage.getItem('status'))
+    // setSession({ _id: localStorage.getItem('userid'), token: localStorage.getItem('token') })
+    // setEmail(localStorage.getItem('email'))
     if (session) {
       console.log('something', session)
       // return (
@@ -57,7 +64,7 @@ function Navbar() {
         .post(
           'https://backend-api-2022.onrender.com/api/payments/getPaymentStatus',
           {
-            email: session.user.email
+            email: email
           }
         )
         .then((res) => {
@@ -69,7 +76,7 @@ function Navbar() {
           console.log(err)
         })
     }
-    if (status === 'authenticated' && session.user.email) {
+    if (status === 'authenticated' && email) {
       get()
     }
   }, [])
@@ -80,11 +87,16 @@ function Navbar() {
       name: 'Dashboard',
       link: '/id/portal'
     },
-    {
-      id: 3,
-      name: 'Companies',
-      link: '/id/viewCompany'
-    }
+    // {
+    //   id: 2,
+    //   name: 'Profile',
+    //   link: '/id/profile'
+    // },
+    // {
+    //   id: 3,
+    //   name: 'Companies',
+    //   link: '/id/viewCompany'
+    // }
     // {
     //   id: 4,
     //   name: "Pay Now",
@@ -96,13 +108,13 @@ function Navbar() {
     e.preventDefault()
     const res = await initializeRazorpay()
 
-    if (session?.user.email && session?.user._id && res) {
+    if (email && session?._id && res) {
       axios
         .post(
           'https://backend-api-2022.onrender.com/api/payments/createOrder',
           {
-            email: session.user.email,
-            _id: session.user._id
+            email: email,
+            _id: session._id
           }
         )
         .then((res) => {
@@ -291,7 +303,9 @@ function Navbar() {
           className={hamOn ? styles.logout_off : styles.logout_on}
           onClick={(e) => {
             e.preventDefault()
-            signOut({ callbackUrl: 'https://ecellbphc.in/id/portal' })
+            // signOut({ callbackUrl: 'https://ecellbphc.in/id/portal' })
+            localStorage.clear()
+            window.location.href = 'http://localhost:3000/id/portal'
           }}
         >
           Log Out

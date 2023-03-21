@@ -16,7 +16,7 @@ function Login() {
   }
   return (
     <>
-      <div className={styles.cardWrapper}>
+      {/* <div className={styles.cardWrapper}>
         <div className={styles.cardContainer}>
           <div className={styles.Header}>Internship Drive </div>
           <div className={styles.links}>
@@ -36,7 +36,7 @@ function Login() {
           </div>
           {!signUpClicked ? <SignIn /> : <SignUp />}
         </div>
-      </div>
+      </div> */}
     </>
   )
 }

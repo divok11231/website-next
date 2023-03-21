@@ -8,7 +8,31 @@
   text-align: center;
   margin-bottom: 20vh;
 }
+.contain{
+  min-height: 80vh;
+  display: flex;
+  border: 1px solid white;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5vh 10vh 5vh 10vh;
+  border-radius: 10px;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  flex-direction: column;
+  align-items: center;
+}
+.header{
+  font-size: 6vh;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 0.5vh;
 
+}
+.subheader{
+  font-size: 4vh;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 0.5vh;
+}
 .cardContainer {
   /* box-shadow: 0 4px 8px 0 rgb(95, 83, 207), 0 6px 20px 0 rgb(36, 68, 128); */
   background-color: rgb(17, 17, 17);

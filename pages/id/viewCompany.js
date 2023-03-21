@@ -5,10 +5,27 @@ import { v4 as uuidv4 } from 'uuid'
 import CompanyCards from '../../components/id/companyCards'
 import AppliedCards from '../../components/id/appliedCards'
 import styles from '../../styles/id/viewcompany.module.css'
+import { useEffect } from 'react'
 
 function ViewCompany() {
   const [toggle, setToggle] = useState(1)
   const [randomString, setRandomString] = useState(uuidv4())
+
+    const [status, setStatus] = useState('')
+    const [session, setSession] = useState({
+      _id: '',
+      token: ''
+    })
+    const [email, setEmail] = useState('')
+
+  useEffect(() => {
+                setStatus(localStorage.getItem('status'))
+                setSession({
+                  _id: localStorage.getItem('userid'),
+                  token: localStorage.getItem('token')
+                })
+                setEmail(localStorage.getItem('email'))
+  },[])
 
   const handleClass = (toggle) => {
     if (toggle == 1) {
@@ -71,10 +88,15 @@ function ViewCompany() {
       </div>
       <div className={styles.AllCards}>
         <div className={handleClass(toggle)}>
-          <CompanyCards />
+          <CompanyCards email={email} session={session} status={status} />
         </div>
         <div className={handleClass2(toggle)}>
-          <AppliedCards randomString={randomString} />
+          <AppliedCards
+            randomString={randomString}
+            email={email}
+            session={session}
+            status={status}
+          />
         </div>
       </div>
       <div

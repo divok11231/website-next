@@ -5,8 +5,8 @@ import launchpad from '../../assets/Launchpad.png'
 import { useSession } from 'next-auth/react'
 import axios from 'axios'
 
-function CompanyCards() {
-  const { data: session, status } = useSession()
+function CompanyCards({email, session, status}) {
+  // const { data: session, status } = useSession()
   const [datas, setData] = useState([])
   useEffect(() => {
     async function get() {
@@ -29,14 +29,14 @@ function CompanyCards() {
         .post(
           'https://backend-api-2022.onrender.com/api/applications/apply',
           {
-            applicantID: session.user._id,
+            applicantID: session._id,
             companyID,
             footnotes: 'footnotes'
           },
           {
             headers: {
               'Content-Type': 'application/json',
-              Authorization: 'Bearer ' + session.accessToken
+              Authorization: 'Bearer ' + session.token
             }
           }
         )
@@ -126,14 +126,14 @@ function CompanyCards() {
                   >
                     Job Description
                   </a>
-                  {/* <div>
+                  <div>
                     <button
                       className={styles.button}
                       onClick={(e) => e.preventDefault(applyNow(data._id))}
                     >
                       Apply Now
                     </button>
-                  </div> */}
+                  </div>
                 </div>
               </div>
               {/* <Auth prop={data} /> */}

@@ -63,7 +63,7 @@ const SignIn = () => {
             className={styles.inputField}
             name="username"
             placeholder="Email"
-            value={email}
+            // value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
@@ -73,7 +73,7 @@ const SignIn = () => {
             className={styles.inputField}
             name="pass"
             placeholder="Password"
-            value={password}
+            // value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>

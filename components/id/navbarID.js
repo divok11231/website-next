@@ -244,7 +244,7 @@ function Navbar({email, session, status}) {
     );
   }
 
-  return <>
+  return( <>
     <div className={styles.ham} onClick={handleClick}>
       <div className={hamOn ? styles.line1 : styles.run1}>
         <div className={hamOn ? styles.innerline1 : styles.run1}></div>
@@ -311,7 +311,7 @@ function Navbar({email, session, status}) {
           <Image src={launchpad} alt="logo" />
         </div>
       </div>
-    </>
+  </>
   )
 }
 

@@ -55,11 +55,6 @@ function CAform() {
       description: 'Internship Drive Transaction',
       order_id: order.id,
       callback_url: `https://backend-api-2022.onrender.com/id/buy/${data.email}/${order.id}/${data.name}/${data.contact}/${data.year}/${data.city}/${data.college}`,
-      handler: function (response) {
-        localStorage.setItem('auth', true)
-        localStorage.setItem('email', data.email)
-        alert('Success!')
-      },
       theme: {
         color: '#150050'
       }
@@ -164,7 +159,14 @@ function CAform() {
     <div className={styles.container}>
       <div className={styles.redirect}></div>
       <h1 className={styles.heading}>Internship Drive</h1>
-      <h3 className={styles.note}>Note : If you have already paid for Executive Pass/Internship Drive, click <u><a href="https://www.ecellbphc.in/id/portal">HERE</a></u> to Sign Up for ID Portal</h3>
+      <h3 className={styles.note}>
+        Note : If you have already paid for Executive Pass/Internship Drive,
+        click{' '}
+        <u>
+          <a href="https://www.ecellbphc.in/id/portal">HERE</a>
+        </u>{' '}
+        to Sign Up for ID Portal
+      </h3>
       <form className={styles.form}>
         <div className={styles.row}>
           <div className={styles.column}>

@@ -29,9 +29,9 @@ function ViewCompany() {
                 setEmail(localStorage.getItem('email'))
 
                 const paid = axios.post(
-                  'http://localhost:3001/api/auth/getUser',
-                  {email : email}
-    )
+                  'https://www.ecellbphc.in/api/auth/getUser',
+                  { email: email }
+                )
     setPaid(paid)
   },[])
 

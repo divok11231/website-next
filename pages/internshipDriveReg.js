@@ -162,7 +162,9 @@ function CAform() {
 
   return (
     <div className={styles.container}>
+      <div className={styles.redirect}></div>
       <h1 className={styles.heading}>Internship Drive</h1>
+      <h3 className={styles.note}>Note : If you have already paid for Executive Pass/Internship Drive, click <u><a href="https://www.ecellbphc.in/id/portal">HERE</a></u> to Sign Up for ID Portal</h3>
       <form className={styles.form}>
         <div className={styles.row}>
           <div className={styles.column}>

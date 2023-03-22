@@ -53,12 +53,15 @@
 }
 
 .user_form {
-  height: fit-content;
+  height: 70vh;
   border-radius: 10px;
   width: 95vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  background-color: #20202a;
+  padding: 5vh;
+
 }
 
 .user_form > div:nth-child(2) {
@@ -112,7 +115,25 @@
   font-size: 1.5rem;
   padding: 20px;
 }
-
+.imginpt{
+  /* background-color: red; */
+  border-radius: 50px;
+  padding:4px;
+  font-size: 15px;
+  
+}
+.imginpt::-webkit-file-upload-button{
+  /* background-image:linear-gradient(45deg,blue,#000); */
+  background-color: white;
+  color:#000;
+  margin-right:20px;
+  font-weight: bold;
+  padding:8px 16px;
+  border-radius: 50px;
+  /* border:none; */
+  border: 3px solid black;
+  cursor: pointer;
+}
 .resume {
   position: absolute;
   bottom: 18%;
@@ -121,22 +142,32 @@
   width: auto;
   height: auto;
   padding: 15px 10px 15px 10px;
-  background: rgb(0, 170, 255);
+   /* background-image: radial-gradient(circle ,rgb(0, 37, 55),#000); */
+   /* border: 2px solid white; */
+  /* background-color: #021135; */
+  /* box-shadow:0 4px 10px 0 rgba(0,37,255); */
+  border: 2px solid rgba(0,37,255);
+  /* color: */
+  
+  /* background: transparent; */
   border-radius: 10px;
-  color: black;
+  color: white;
   font-size: 20px;
-
+  transition: 0.4s;
   right: 10%;
 }
 .resume:hover {
   cursor: pointer;
+  /* transform: scale(1.1); */
 }
 
 .submit {
   padding: 10px 14px;
-  width: max-content;
+  /* width: 11vw; */
+  width:max-content;
   background: rgb(0, 170, 255);
-  font-size: 2rem;
+  border:none;
+  font-size: 1.5rem;
   text-transform: uppercase;
   font-family: 'Bebas Neue', cursive;
   border-radius: 5px;
@@ -144,12 +175,27 @@
 .submit2 {
   padding: 10px 14px;
   width: max-content;
-  background: rgb(0, 170, 255);
-  font-size: 1.5rem;
+  /* height:4vh; */
+  /* background: rgb(0, 170, 255); */
+  background-color: white;
+  /* border: 2px solid black; */
+  /* background-color: red; */
+  /* position: relative; */
+  margin-left:5vw;
+  margin-top:1vh;   
+  font-size: 1.2rem;
+  
   text-transform: uppercase;
   font-family: 'Bebas Neue', cursive;
-  border-radius: 5px;
+  border-radius: 25px;
   color: black;
+  transition: 0.2s;
+}
+.submit2:hover{
+  transform: scale(1.1);
+  background-color: rgb(31, 52, 191);
+  color:white;
+  /* border:2px solid white; */
 }
 .none {
   display: none;
@@ -165,6 +211,7 @@
   flex-direction: row;
   justify-content: space-between;
   width: 90vw;
+  /* background-color: white; */
 }
 .resumebtn {
   color: white;
@@ -178,10 +225,10 @@
 }
 @media screen and (max-width: 1400px) {
   .submit {
-    transform: scale(0.7);
+    transform: scale(1.1);
   }
   .labels {
-    transform: scale(0.8);
+    transform: scale(1.1);
   }
   .inputbox {
     transform: scale(0.8);
@@ -196,11 +243,17 @@
     transform: scale(0.8);
   }
   .resume {
-    transform: scale(0.8);
+    transform: scale(1);
     padding: 15px;
   }
+  .submit{
+    transform: scale(0.9);
+  }
 }
-@media screen and (max-width: 549px) {
+@media screen and (max-width:900px){
+  .user_form{
+    height:200vh;
+  }
   .user_form > div {
     width: 80vw;
   }
@@ -208,7 +261,8 @@
     position: relative;
     bottom: -20%;
     right: auto;
-    margin-bottom: 5vh;
+    margin-top:-10vh;
+    margin-bottom: 15vh;
     font-size: 25px;
   }
   .user_form > div:nth-child(2) {
@@ -223,9 +277,105 @@
   .inner_right_top {
     margin-top: 8vh;
   }
+  .resume{
+    margin-left:-10vw;
+    /* background-color: white; */
+  }
+  .submit2{
+    margin:auto;  
+    margin-top:5vh;
+  }
   .submit {
     /* margin-top: 10vh; */
-    margin-left: auto;
+    height:12vh;
+    width: 100%;
+    margin-left: -7vw;
+    margin-right: auto;
+  }
+}
+@media screen and (max-width: 549px) {
+  .user_form{
+    height:200vh;
+  }
+  .user_form > div {
+    width: 80vw;
+  }
+  .resume {
+    position: relative;
+    bottom: -20%;
+    right: auto;
+    margin-top:-10vh;
+    margin-bottom: 15vh;
+    font-size: 25px;
+  }
+  .user_form > div:nth-child(2) {
+    width: 80vw;
+  }
+  .user_form > div:nth-child(5) {
+    width: 80vw;
+  }
+  .launchpad_logo {
+    display: none;
+  }
+  .inner_right_top {
+    margin-top: 8vh;
+  }
+  .resume{
+    margin-left:-12.5vw;
+    /* background-color: white; */
+  }
+  .submit2{
+    margin:auto;  
+    margin-top:5vh;
+  }
+  .submit {
+    /* margin-top: 10vh; */
+    height:12vh;
+    width: 100%;
+    margin-left: -7vw;
+    margin-right: auto;
+  }
+}
+@media screen and (max-width: 549px) and (min-height:750px) {
+  .user_form{
+    height:200vh;
+  }
+  .user_form > div {
+    width: 80vw;
+  }
+  .resume {
+    position: relative;
+    bottom: -20%;
+    right: auto;
+    margin-top:-10vh;
+    margin-bottom: 15vh;
+    font-size: 25px;
+  }
+  .user_form > div:nth-child(2) {
+    width: 80vw;
+  }
+  .user_form > div:nth-child(5) {
+    width: 80vw;
+  }
+  .launchpad_logo {
+    display: none;
+  }
+  .inner_right_top {
+    margin-top: 8vh;
+  }
+  .resume{
+    margin-left:-8vw;
+    /* background-color: white; */
+  }
+  .submit2{
+    margin:auto;  
+    margin-top:5vh;
+  }
+  .submit {
+    /* margin-top: 10vh; */
+    height:12vh;
+    width: 100%;
+    margin-left: -7vw;
     margin-right: auto;
   }
 }

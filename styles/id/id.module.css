@@ -27,6 +27,16 @@ margin-right: auto;
   /* margin-left: 25%; */
   /* margin-bottom: 10px; */
 }
+.note {
+  font-size: 15px;
+  text-align: center;
+  color: red;
+  /* border-bottom:5px solid #fb0057;
+  border-radius: 20px;
+  width:50%; */
+  /* margin-left: 25%; */
+  /* margin-bottom: 10px; */
+}
 .form {
   width: 100%;
   /* position: relative; */

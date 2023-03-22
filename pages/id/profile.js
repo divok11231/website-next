@@ -266,7 +266,7 @@ function Profile() {
   }
 
   function ResumeHandler() {
-    if (userData.resumeURL) return 'Update Resume'
+    if (userData.resumeURL) return 'Resume Uploaded'
     else return 'Upload Resume'
   }
 
@@ -370,12 +370,6 @@ function Profile() {
                 <div></div>
               </div>
               <div className={styles.buttons}>
-                <button
-                  className={styles.submit}
-                  onClick={(e) => handleUpdate(e)}
-                >
-                  Update
-                </button>
                 <div className={styles.resume}>
                   <input
                     type="file"
@@ -386,6 +380,7 @@ function Profile() {
                     }}
                     name="resume"
                     accept="application/pdf"
+                    className={styles.imginpt}
                   />
                   <div className={styles.submit2} onClick={handleFileUpload}>
                     <ResumeHandler />
@@ -396,6 +391,12 @@ function Profile() {
                     </div>
                   </div>
                 </div>
+                <button
+                  className={styles.submit}
+                  onClick={(e) => handleUpdate(e)}
+                >
+                  Update
+                </button>
                 {/* {!paids ? (
                   <button className={styles.submit} onClick={openRazorpay}>
                     Pay

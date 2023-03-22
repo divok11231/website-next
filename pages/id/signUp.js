@@ -23,7 +23,7 @@ const SignUp = () => {
         }
 
         await fetch('https://backend-api-2022.onrender.com/api/auth/register', options).then(res => res.json()).then((data) => {
-            if(data) router.push('http://localhost:3000/id/signIn')
+            if(data) router.push('https://www.ecellbphc.in/id/signIn')
         })
     }
 
@@ -72,6 +72,7 @@ const SignUp = () => {
 
             <button className={styles.Sbtn}>SIGN UP</button>
           </div>
+          <div className={styles.note}>Already been here? Click <u><a href="https://www.ecellbphc.in/id/signIn">here</a></u> to Sign In.</div>
         </div>
       </div>
     </>

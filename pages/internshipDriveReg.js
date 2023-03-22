@@ -53,7 +53,7 @@ function CAform() {
       name: 'E-Cell BITS Hyderabad',
       description: 'Internship Drive Transaction',
       order_id: order.id,
-      callback_url: `https://backend-api-2022.onrender.com/id/buy/${data.email}/${order.id}/${data.name}/${data.contact}/${data.year}/${data.city}/${data.college}`,
+      callback_url: `https://backend-api-2022.onrender.com/id/buy/${data.email}/${order.id}/${data.name}/${data.contact}/${data.year}/${data.city}/${data.college}/${data.code}`,
       theme: {
         color: '#150050'
       }
@@ -237,6 +237,18 @@ alert('data submitted successfully!')
               name="year"
               value={data.year}
               placeholder="Year of Graduation"
+            />
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.column}>
+            <label className={styles.label}>Referal Code</label>
+            <input
+              className={styles.input}
+              placeholder="Code"
+              name="code"
+              value={data.code}
+              onChange={handleChange}
             />
           </div>
         </div>

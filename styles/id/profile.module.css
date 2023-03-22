@@ -112,7 +112,25 @@
   font-size: 1.5rem;
   padding: 20px;
 }
-
+.imginpt{
+  /* background-color: red; */
+  border-radius: 50px;
+  padding:4px;
+  font-size: 15px;
+  
+}
+.imginpt::-webkit-file-upload-button{
+  /* background-image:linear-gradient(45deg,blue,#000); */
+  background-color: white;
+  color:#000;
+  margin-right:20px;
+  font-weight: bold;
+  padding:8px 16px;
+  border-radius: 50px;
+  /* border:none; */
+  border: 3px solid black;
+  cursor: pointer;
+}
 .resume {
   position: absolute;
   bottom: 18%;
@@ -121,7 +139,10 @@
   width: auto;
   height: auto;
   padding: 15px 10px 15px 10px;
+   /* background-image: radial-gradient(circle ,rgb(0, 37, 55),#000); */
+   /* border: 2px solid white; */
   background: rgb(0, 170, 255);
+  /* background: transparent; */
   border-radius: 10px;
   color: black;
   font-size: 20px;
@@ -145,6 +166,7 @@
   padding: 10px 14px;
   width: max-content;
   background: rgb(0, 170, 255);
+  /* background-color: red; */
   font-size: 1.5rem;
   text-transform: uppercase;
   font-family: 'Bebas Neue', cursive;

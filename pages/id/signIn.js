@@ -44,7 +44,7 @@ const SignIn = () => {
       localStorage.setItem('email' , json.email)
       // localStorage.setItem("user_id", json.user_id);
       window.alert('logged in successfully!!')
-      window.location.href = 'http://localhost:3000/id/portal'
+      window.location.href = 'https://www.ecellbphc.in/id/portal'
     } else {
       window.alert('Invalid Credentials!!')
     }

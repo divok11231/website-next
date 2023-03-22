@@ -266,7 +266,7 @@ function Profile() {
   }
 
   function ResumeHandler() {
-    if (userData.resumeURL) return 'Update Resume'
+    if (userData.resumeURL) return 'Resume Uploaded'
     else return 'Upload Resume'
   }
 
@@ -386,6 +386,7 @@ function Profile() {
                     }}
                     name="resume"
                     accept="application/pdf"
+                    className={styles.imginpt}
                   />
                   <div className={styles.submit2} onClick={handleFileUpload}>
                     <ResumeHandler />

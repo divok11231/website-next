@@ -23,7 +23,7 @@ const SignUp = () => {
         }
 
         await fetch('https://backend-api-2022.onrender.com/api/auth/register', options).then(res => res.json()).then((data) => {
-            if(data) router.push('http://localhost:3000/id/signIn')
+            if(data) router.push('https://www.ecellbphc.in/id/signIn')
         })
     }
 

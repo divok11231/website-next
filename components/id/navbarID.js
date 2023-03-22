@@ -305,7 +305,7 @@ function Navbar({email, session, status}) {
             e.preventDefault()
             // signOut({ callbackUrl: 'https://ecellbphc.in/id/portal' })
             localStorage.clear()
-            window.location.href = 'http://localhost:3000/id/portal'
+            window.location.href = 'https://www.ecellbphc.in/id/portal'
           }}
         >
           Log Out

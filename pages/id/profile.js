@@ -370,12 +370,6 @@ function Profile() {
                 <div></div>
               </div>
               <div className={styles.buttons}>
-                <button
-                  className={styles.submit}
-                  onClick={(e) => handleUpdate(e)}
-                >
-                  Update
-                </button>
                 <div className={styles.resume}>
                   <input
                     type="file"
@@ -397,6 +391,12 @@ function Profile() {
                     </div>
                   </div>
                 </div>
+                <button
+                  className={styles.submit}
+                  onClick={(e) => handleUpdate(e)}
+                >
+                  Update
+                </button>
                 {/* {!paids ? (
                   <button className={styles.submit} onClick={openRazorpay}>
                     Pay

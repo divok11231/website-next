@@ -162,6 +162,7 @@ function CAform() {
 
   return (
     <div className={styles.container}>
+      <div className={styles.redirect}></div>
       <h1 className={styles.heading}>Internship Drive</h1>
       <form className={styles.form}>
         <div className={styles.row}>

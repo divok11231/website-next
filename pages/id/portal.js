@@ -108,7 +108,7 @@ export default function Home() {
         </div>
         <div className={styles.stats}>
           <StatsCounter start={0} end={50} info="Startups" />
-          <StatsCounter start={14000} end={30000} info="Stipend" />
+          <StatsCounter start={14000} end={50000} info="Stipend" />
           <StatsCounter start={50} end={100} info="Interns Converted" />
           <StatsCounter start={1500} end={3000} info="Applications" />
         </div>

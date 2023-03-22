@@ -72,6 +72,7 @@ const SignUp = () => {
 
             <button className={styles.Sbtn}>SIGN UP</button>
           </div>
+          <div className={styles.note}>Already been here? Click <u><a href="https://www.ecellbphc.in/id/signIn">here</a></u> to Sign In.</div>
         </div>
       </div>
     </>

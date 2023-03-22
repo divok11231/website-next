@@ -163,7 +163,7 @@ function Navbar({email, session, status}) {
   function PayNow() {
     if (status == 'authenticated') {
       return (
-        <Link href="/id/paynow">
+        <Link href="/id/paynow" legacyBehavior>
           <div
             className={hamOn ? styles.fadeout : styles.fadein}
             onClick={handleClick}
@@ -171,7 +171,7 @@ function Navbar({email, session, status}) {
             PayNow
           </div>
         </Link>
-      )
+      );
     } else if (status == 'authenticated' && paids) {
       return (
         <>
@@ -205,7 +205,7 @@ function Navbar({email, session, status}) {
   function Profile() {
     if (status == 'authenticated') {
       return (
-        <Link href="/id/profile">
+        <Link href="/id/profile" legacyBehavior>
           <div
             onClick={handleClick}
             className={hamOn ? styles.fadeout : styles.fadein}
@@ -213,26 +213,24 @@ function Navbar({email, session, status}) {
             Profile
           </div>
         </Link>
-      )
+      );
     } else return null
   }
   function Company() {
     if (status == 'authenticated') {
-      return (
-        <>
-          <Link href="/id/viewCompany">
-            <div
-              onClick={handleClick}
-              className={hamOn ? styles.fadeout : styles.fadein}
-            >
-              Companies
-            </div>
-          </Link>
-        </>
-      )
+      return <>
+        <Link href="/id/viewCompany" legacyBehavior>
+          <div
+            onClick={handleClick}
+            className={hamOn ? styles.fadeout : styles.fadein}
+          >
+            Companies
+          </div>
+        </Link>
+      </>;
     }
     return (
-      <Link href="/id/portal">
+      <Link href="/id/portal" legacyBehavior>
         <div
           onClick={() => {
             alert('Register/LogIn First!')
@@ -243,79 +241,77 @@ function Navbar({email, session, status}) {
           Companies
         </div>
       </Link>
-    )
+    );
   }
 
-  return (
-    <>
-      <div className={styles.ham} onClick={handleClick}>
-        <div className={hamOn ? styles.line1 : styles.run1}>
-          <div className={hamOn ? styles.innerline1 : styles.run1}></div>
-        </div>
-        <div className={hamOn ? styles.line2 : styles.run2}>
-          <div className={hamOn ? styles.innerline2 : styles.run2}></div>
-        </div>
-        <div className={hamOn ? styles.line3 : styles.run3}>
-          <div className={hamOn ? styles.innerline3 : styles.run3}></div>
-        </div>
-        <div className={hamOn ? styles.backcross1 : styles.runIn1}></div>
-        <div className={hamOn ? styles.backcross2 : styles.runIn2}></div>
+  return <>
+    <div className={styles.ham} onClick={handleClick}>
+      <div className={hamOn ? styles.line1 : styles.run1}>
+        <div className={hamOn ? styles.innerline1 : styles.run1}></div>
       </div>
+      <div className={hamOn ? styles.line2 : styles.run2}>
+        <div className={hamOn ? styles.innerline2 : styles.run2}></div>
+      </div>
+      <div className={hamOn ? styles.line3 : styles.run3}>
+        <div className={hamOn ? styles.innerline3 : styles.run3}></div>
+      </div>
+      <div className={hamOn ? styles.backcross1 : styles.runIn1}></div>
+      <div className={hamOn ? styles.backcross2 : styles.runIn2}></div>
+    </div>
 
-      <div className={hamOn ? styles.up : styles.down}>
-        <div className={hamOn ? styles.none : styles.innerdown}>
-          {cards.map((data) => {
-            return (
-              <div key={data.id}>
-                <Link href={data.link}>
-                  <div
-                    onClick={handleClick}
-                    className={hamOn ? styles.fadeout : styles.fadein}
-                  >
-                    {data.name}
-                  </div>
-                </Link>
-              </div>
-            )
-          })}
-          <Company />
-          <Profile hook={openRazorpay} />
-          {/* {!paids ? (
+    <div className={hamOn ? styles.up : styles.down}>
+      <div className={hamOn ? styles.none : styles.innerdown}>
+        {cards.map((data) => {
+          return (
+            <div key={data.id}>
+              <Link href={data.link} legacyBehavior>
+                <div
+                  onClick={handleClick}
+                  className={hamOn ? styles.fadeout : styles.fadein}
+                >
+                  {data.name}
+                </div>
+              </Link>
+            </div>
+          );
+        })}
+        <Company />
+        <Profile hook={openRazorpay} />
+        {/* {!paids ? (
+          <div
+            onClick={openRazorpay}
+            className={hamOn ? styles.fadeout : styles.fadei~n}
+          >
+            Pay Now
+          </div>
+        ) : (
+          <Link href="/id/success">
             <div
-              onClick={openRazorpay}
-              className={hamOn ? styles.fadeout : styles.fadei~n}
+              onClick={handleClick}
+              className={hamOn ? styles.fadeout : styles.fadein}
             >
               Pay Now
             </div>
-          ) : (
-            <Link href="/id/success">
-              <div
-                onClick={handleClick}
-                className={hamOn ? styles.fadeout : styles.fadein}
-              >
-                Pay Now
-              </div>
-            </Link>
-          )} */}
-          {/* <PayNow /> */}
-        </div>
-        <div
-          className={hamOn ? styles.logout_off : styles.logout_on}
-          onClick={(e) => {
-            e.preventDefault()
-            // signOut({ callbackUrl: 'https://ecellbphc.in/id/portal' })
-            localStorage.clear()
-            window.location.href = 'http://localhost:3000/id/portal'
-          }}
-        >
-          Log Out
-        </div>
-        <div className={hamOn ? styles.launchpad_off : styles.launchpad_on}>
-          <Image src={launchpad} alt="logo" />
-        </div>
+          </Link>
+        )} */}
+        {/* <PayNow /> */}
       </div>
-    </>
-  )
+      <div
+        className={hamOn ? styles.logout_off : styles.logout_on}
+        onClick={(e) => {
+          e.preventDefault()
+          // signOut({ callbackUrl: 'https://ecellbphc.in/id/portal' })
+          localStorage.clear()
+          window.location.href = 'http://localhost:3000/id/portal'
+        }}
+      >
+        Log Out
+      </div>
+      <div className={hamOn ? styles.launchpad_off : styles.launchpad_on}>
+        <Image src={launchpad} alt="logo" />
+      </div>
+    </div>
+  </>;
 }
 
 export default Navbar

@@ -15,123 +15,133 @@ export default function Navbar(props) {
     setrender('ID')
   }
 
-  return (
-    <>
-      <div className={Navbarcss.navbar}>
-        <div className={Navbarcss.logo}>
-          <Link href="/">
-            <a>
-              <Image src={pic1} width={160} height={60} />
-            </a>
-          </Link>
-        </div>
-        <div className={Navbarcss.buttons}>
-          <Link href="/internshipDriveReg">
-            <a className={Navbarcss.button}>Internship Drive</a>
-          </Link>
-          <Link href="/pitchersPilot">
-            <a className={Navbarcss.button}>Pitcher&apos;s Pilot</a>
-          </Link>
-          <Link href="https://launchpad23.vercel.app/">
-            <a className={Navbarcss.button}>Launchpad</a>
-          </Link>
-          <a
-            className={Navbarcss.button}
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://join.slack.com/t/entrepreneurial-mind1/shared_invite/zt-ulz68kty-SF6tFkMYsxWaLiZkkksUgw"
-          >
-            Community
-          </a>
-          <Link href="/about">
-            <a className={Navbarcss.button}>About us</a>
-          </Link>
-          {/* <Link href="/id/portal">
-            <a
-              onClick={() => {
-                setrender('ID')
-              }}
-              className={Navbarcss.button}
-            >
-              Internship Drive
-            </a>
-          </Link> */}{' '}
-          {/*<Link href="/welcome/signup">
-            <a className={(Navbarcss.button, Navbarcss.rightmostbutton)}>
-              Sign Up
-            </a>
-  </Link>*/}
-        </div>
-      </div>
+  return <>
+    <div className={Navbarcss.navbar}>
+      <div className={Navbarcss.logo}>
+        <Link href="/">
 
-      <div className={Navbarcss.topbar}>
-        <div className={Navbarcss.mb_logo}>
-          <Link href="/">
-            <Image
-              src={pic2}
-              alt="ECell logo"
-              layout="fill"
-              objectFit="cover"
-            />
-          </Link>
-        </div>
-        <div className={Navbarcss.ham} onClick={() => handleClick()}>
-          <div className={isHamOn ? Navbarcss.ham1 : null}></div>
-          <div className={isHamOn ? Navbarcss.ham2 : null}></div>
-          <div className={isHamOn ? Navbarcss.ham3 : null}></div>
-        </div>
-      </div>
+          <Image src={pic1} width={160} height={60} />
 
-      <div className={isHamOn ? Navbarcss.mobilenav : Navbarcss.temp}>
-        <div className={Navbarcss.ham} onClick={() => handleClick()}>
-          <div className={isHamOn ? Navbarcss.ham1 : null}></div>
-          <div className={isHamOn ? Navbarcss.ham2 : null}></div>
-          <div className={isHamOn ? Navbarcss.ham3 : null}></div>
-        </div>
-        <div className={Navbarcss.mobilenav_logo}>
-          <Link href="/">
-            <a>
-              <Image src={pic1} width={200} height={75} />
-            </a>
-          </Link>
-        </div>
-        <Link href="/internshipDriveReg">
-          <a onClick={() => handleClick()} className={Navbarcss.mobilebtn}>
-            Internship Drive
-          </a>
         </Link>
-        <Link href="/pitchersPilot">
-          <a onClick={() => handleClickID()} className={Navbarcss.mobilebtn}>
-            Pitchers Pilot
-          </a>
+      </div>
+      <div className={Navbarcss.buttons}>
+        <Link href="/internshipDriveReg" className={Navbarcss.button}>
+          Internship Drive
         </Link>
-        <Link href="https://launchpad23.vercel.app/">
-          <a onClick={() => handleClick()} className={Navbarcss.mobilebtn}>
-            Launchpad 23
-          </a>
+        <Link href="/pitchersPilot" className={Navbarcss.button}>
+          Pitcher&apos;s Pilot
+        </Link>
+        <Link href="https://launchpad23.vercel.app/" className={Navbarcss.button}>
+          Launchpad
         </Link>
         <a
-          onClick={() => handleClick()}
-          className={Navbarcss.mobilebtn}
+          className={Navbarcss.button}
           target="_blank"
           rel="noopener noreferrer"
-          href="https://join.slack.com/t/entrepreneurial-mind1/shared_invite/zt-tzumg4dy-ENN8qV~UDcVDU34CV~FEJA"
+          href="https://join.slack.com/t/entrepreneurial-mind1/shared_invite/zt-ulz68kty-SF6tFkMYsxWaLiZkkksUgw"
         >
           Community
         </a>
-
-        <Link href="/about">
-          <a onClick={() => handleClick()} className={Navbarcss.mobilebtn}>
-            About Us
-          </a>
+        <Link href="/about" className={Navbarcss.button}>
+          About us
         </Link>
-
-        {/* <Link href="/welcome/signup">
-          <a onClick={() => handleClick()} className={Navbarcss.mobilebtn}>
+        {/* <Link href="/id/portal">
+          <a
+            onClick={() => {
+              setrender('ID')
+            }}
+            className={Navbarcss.button}
+          >
+            Internship Drive
+          </a>
+        </Link> */}{' '}
+        {/*<Link href="/welcome/signup">
+          <a className={(Navbarcss.button, Navbarcss.rightmostbutton)}>
             Sign Up
           </a>
 </Link>*/}
       </div>
-    </>
-  )
+    </div>
+
+    <div className={Navbarcss.topbar}>
+      <div className={Navbarcss.mb_logo}>
+        <Link href="/" legacyBehavior>
+          <Image
+            src={pic2}
+            alt="ECell logo"
+            layout="fill"
+            objectFit="cover"
+          />
+        </Link>
+      </div>
+      <div className={Navbarcss.ham} onClick={() => handleClick()}>
+        <div className={isHamOn ? Navbarcss.ham1 : null}></div>
+        <div className={isHamOn ? Navbarcss.ham2 : null}></div>
+        <div className={isHamOn ? Navbarcss.ham3 : null}></div>
+      </div>
+    </div>
+
+    <div className={isHamOn ? Navbarcss.mobilenav : Navbarcss.temp}>
+      <div className={Navbarcss.ham} onClick={() => handleClick()}>
+        <div className={isHamOn ? Navbarcss.ham1 : null}></div>
+        <div className={isHamOn ? Navbarcss.ham2 : null}></div>
+        <div className={isHamOn ? Navbarcss.ham3 : null}></div>
+      </div>
+      <div className={Navbarcss.mobilenav_logo}>
+        <Link href="/">
+
+          <Image src={pic1} width={200} height={75} />
+
+        </Link>
+      </div>
+      <Link
+        href="/internshipDriveReg"
+        onClick={() => handleClick()}
+        className={Navbarcss.mobilebtn}>
+        
+          Internship Drive
+        
+      </Link>
+      <Link
+        href="/pitchersPilot"
+        onClick={() => handleClickID()}
+        className={Navbarcss.mobilebtn}>
+        
+          Pitchers Pilot
+        
+      </Link>
+      <Link
+        href="https://launchpad23.vercel.app/"
+        onClick={() => handleClick()}
+        className={Navbarcss.mobilebtn}>
+        
+          Launchpad 23
+        
+      </Link>
+      <a
+        onClick={() => handleClick()}
+        className={Navbarcss.mobilebtn}
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://join.slack.com/t/entrepreneurial-mind1/shared_invite/zt-tzumg4dy-ENN8qV~UDcVDU34CV~FEJA"
+      >
+        Community
+      </a>
+
+      <Link
+        href="/about"
+        onClick={() => handleClick()}
+        className={Navbarcss.mobilebtn}>
+        
+          About Us
+        
+      </Link>
+
+      {/* <Link href="/welcome/signup">
+        <a onClick={() => handleClick()} className={Navbarcss.mobilebtn}>
+          Sign Up
+        </a>
+</Link>*/}
+    </div>
+  </>;
 }

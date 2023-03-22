@@ -47,7 +47,7 @@ export default function Launchpad({ setrender }) {
         </div>
       </div>
       {status === 'authenticated' ? (
-        <Link href="/id/profile">
+        <Link href="/id/profile" legacyBehavior>
           <button className={styles.buy_button}>BUY TICKETS</button>
         </Link>
       ) : (
@@ -64,5 +64,5 @@ export default function Launchpad({ setrender }) {
         </button>
       )}
     </div>
-  )
+  );
 }

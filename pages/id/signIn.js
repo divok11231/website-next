@@ -51,52 +51,50 @@ const SignIn = () => {
 
     setLoading(false)
   }
-  return (
-    <>
-          <div className={styles.contain}>
-              <div className={styles.header}>Internship Drive</div>
-              <div className={styles.subheader}>Log In</div>
-        <div className={styles.inputs}>
-          <div className={styles.input}>
-            {/* <h1>{loginError}</h1> */}
-            <input
-              type="email"
-              className={styles.inputField}
-              name="username"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </div>
-          <div className={styles.input}>
-            <input
-              type="password"
-              className={styles.inputField}
-              name="pass"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
+  return <>
+        <div className={styles.contain}>
+            <div className={styles.header}>Internship Drive</div>
+            <div className={styles.subheader}>Log In</div>
+      <div className={styles.inputs}>
+        <div className={styles.input}>
+          {/* <h1>{loginError}</h1> */}
+          <input
+            type="email"
+            className={styles.inputField}
+            name="username"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
         </div>
-        <div className={styles.butn}>
-          <button
-            className={styles.btn}
-            onClick={(e) => {
-              handleSubmit(e)
-            }}
-          >
-            SIGN IN
-          </button>
-        </div>
-        <div className={styles.forgot}>
-          <Link href="/id/signUp">
-            <a className={styles.forgotPwd}>Do not have an account?</a>
-          </Link>
+        <div className={styles.input}>
+          <input
+            type="password"
+            className={styles.inputField}
+            name="pass"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
         </div>
       </div>
-    </>
-  )
+      <div className={styles.butn}>
+        <button
+          className={styles.btn}
+          onClick={(e) => {
+            handleSubmit(e)
+          }}
+        >
+          SIGN IN
+        </button>
+      </div>
+      <div className={styles.forgot}>
+        <Link href="/id/signUp" className={styles.forgotPwd}>
+          Do not have an account?
+        </Link>
+      </div>
+    </div>
+  </>;
 }
 
 export default SignIn

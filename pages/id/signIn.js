@@ -6,8 +6,8 @@ import Link from 'next/link'
 
 const SignIn = () => {
     
-  const [email, setEmail] = useState('aa@g.co')
-  const [password, setPassword] = useState('admin')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
     const [loginError, setLoginError] = useState('') 
     const [loading, setLoading] = useState(false)
 

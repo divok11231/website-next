@@ -390,6 +390,7 @@ function Profile() {
                       <ClipLoader />
                     </div>
                   </div>
+                  <div className={styles.noteRed}><p>Format:name_emailid.pdf</p></div>
                 </div>
                 <button
                   className={styles.submit}

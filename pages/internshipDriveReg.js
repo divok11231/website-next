@@ -13,7 +13,6 @@ function CAform() {
     college: '',
     year: '',
     city: '',
-    how: '',
     code: ''
   })
 
@@ -59,7 +58,7 @@ function CAform() {
         color: '#150050'
       }
     }
-
+alert('data submitted successfully!')
     const rzp1 = new window.Razorpay(options)
     rzp1.open()
     rzp1.on('payment.failed', function (response) {

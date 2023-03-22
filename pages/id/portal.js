@@ -67,7 +67,7 @@ export default function Home() {
                   <button className={styles.portalbtn}>My Profile</button>
                 </Link>
               ) : (
-                <Link href="https://www.ecellbphc.in/id/signIn">
+                <Link href="https://www.ecellbphc.in/id/signUp">
                   <button
                     className={styles.dashbtn}
                   >

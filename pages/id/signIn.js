@@ -13,7 +13,7 @@ const SignIn = () => {
 
   const handleSubmit = async (event) => {
     setLoading(true)
-      event.preventDefault()
+
             console.log('helol')
     const response = await fetch(
       'https://backend-api-2022.onrender.com/api/auth/authorize',
@@ -34,6 +34,7 @@ const SignIn = () => {
       )
 
     const json = await response.json()
+    console.log('her')
     if (json.status=='ok') {
     //   localStorage.setItem('auth-token', json.authToken)
       localStorage.setItem('status', 'authenticated')
@@ -44,12 +45,16 @@ const SignIn = () => {
       localStorage.setItem('email' , json.email)
       // localStorage.setItem("user_id", json.user_id);
       window.alert('logged in successfully!!')
+      console.log('jij')
       window.location.href = 'https://www.ecellbphc.in/id/portal'
+       setLoading(false)
     } else {
       window.alert('Invalid Credentials!!')
+      console.log('iu')
+       setLoading(false)
     }
 
-    setLoading(false)
+   
   }
   return <>
         <div className={styles.contain}>
@@ -85,7 +90,7 @@ const SignIn = () => {
             handleSubmit(e)
           }}
         >
-          SIGN IN
+          {loading? (<>Loading...</>):(<>SIGN IN</>)}
         </button>
       </div>
       <div className={styles.forgot}>

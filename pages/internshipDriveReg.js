@@ -5,7 +5,7 @@ import axios from 'axios'
 function CAform() {
   const [valid, setvalid] = useState('')
   const [tic, setTic] = useState('6409a521a0e08dd49a39a094')
-  const [code, setCode] = useState('')
+  const [code, setCode] = useState('NULL')
   const [data, setData] = useState({
     name: '',
     email: '',
@@ -13,7 +13,7 @@ function CAform() {
     college: '',
     year: '',
     city: '',
-    code: ''
+    code: 'NULL'
   })
 
   function loadRazorpay() {
@@ -31,6 +31,9 @@ function CAform() {
   }
 
   async function handleBuy() {
+    if (data.code === '') {
+      setData({ ...data, ['code']: 'NULL' })
+    }
     const userId = data.email
     const ticketId = tic
     console.log(ticketId, '999')
@@ -53,12 +56,16 @@ function CAform() {
       name: 'E-Cell BITS Hyderabad',
       description: 'Internship Drive Transaction',
       order_id: order.id,
-      callback_url: `https://backend-api-2022.onrender.com/id/buy/${data.email}/${order.id}/${data.name}/${data.contact}/${data.year}/${data.city}/${data.college}/${data.code}`,
+      callback_url: `https://backend-api-2022.onrender.com/id/buy/${
+        data.email
+      }/${order.id}/${data.name}/${data.contact}/${data.year}/${data.city}/${
+        data.college
+      }/${data.code == '' ? 'NULL' : data.code}`,
       theme: {
         color: '#150050'
       }
     }
-// alert('data submitted successfully!')
+    // alert('data submitted successfully!')
     const rzp1 = new window.Razorpay(options)
     rzp1.open()
     rzp1.on('payment.failed', function (response) {

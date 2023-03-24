@@ -94,9 +94,15 @@ function ViewCompany() {
         <div className={handleHead(toggle)}>View Companies</div>
         <div className={handleHead2(toggle)}>Applied Companies</div>
       </div>
+      <div className={styles.note}>(You have a maximum of 6 applications)</div>
       <div className={styles.AllCards}>
         <div className={handleClass(toggle)}>
-          <CompanyCards email={email} session={session} status={status} paid={paid} />
+          <CompanyCards
+            email={email}
+            session={session}
+            status={status}
+            paid={paid}
+          />
         </div>
         <div className={handleClass2(toggle)}>
           <AppliedCards

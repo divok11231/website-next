@@ -28,8 +28,11 @@ function Profile() {
   useEffect(() => {
     setStatus(localStorage.getItem('status'))
     setEmail(localStorage.getItem('email'))
-    setSessions({ token: localStorage.getItem('token'), _id: localStorage.getItem('userid') })
-    
+    setSessions({
+      token: localStorage.getItem('token'),
+      _id: localStorage.getItem('userid')
+    })
+
     async function get() {
       axios
         .post(
@@ -158,14 +161,11 @@ function Profile() {
 
     if (status === 'authenticated') {
       axios
-        .get(
-          `https://backend-api-2022.onrender.com/api/users/${session._id}`,
-          {
-            headers: {
-              Authorization: `Bearer ${session.token}`
-            }
+        .get(`https://backend-api-2022.onrender.com/api/users/${session._id}`, {
+          headers: {
+            Authorization: `Bearer ${session.token}`
           }
-        )
+        })
         .then((res) => {
           setUserData({
             ...userData,
@@ -257,7 +257,7 @@ function Profile() {
           })
           .catch((err) => {
             console.log(err)
-            alert('Resume upload failed')
+            alert('Resume upload failed. Please reduce file size.')
           })
       }
     } catch (error) {
@@ -390,7 +390,9 @@ function Profile() {
                       <ClipLoader />
                     </div>
                   </div>
-                  <div className={styles.noteRed}><p>Format:name_emailid.pdf</p></div>
+                  <div className={styles.noteRed}>
+                    <p>Format:name_emailid.pdf</p>
+                  </div>
                 </div>
                 <button
                   className={styles.submit}

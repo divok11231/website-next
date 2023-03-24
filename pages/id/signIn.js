@@ -67,7 +67,7 @@ const SignIn = () => {
             type="email"
             className={styles.inputField}
             name="username"
-            placeholder="Email"
+            placeholder="ID / Email"
             // value={email}
             onChange={(e) => setEmail(e.target.value)}
           />

@@ -122,7 +122,9 @@ function TicketCard() {
             Apply Coupon
           </div>
 
-          <div onClick={handleBuy} className={s.buy}>
+          <div onClick={() => {
+            alert("Registrations for Executive Passes have been closed, see you next year!!")
+          }} className={s.buy}>
             buy ticket
           </div>
         </div>

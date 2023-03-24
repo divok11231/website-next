@@ -166,8 +166,8 @@ function CAform() {
       <div className={styles.redirect}></div>
       <h1 className={styles.heading}>Internship Drive</h1>
       <h3 className={styles.note}>
-        {/* Note : The Registrations have closed. If you have already registered CLICK{' '} */}
-        Note : If you have already paid for Executive Pass / Internship Drive, click{''}
+        Note : The Registrations have closed. If you have already registered CLICK{' '}
+        {/* Note : If you have already paid for Executive Pass / Internship Drive, click{''} */}
         <u>
           <a href="https://www.ecellbphc.in/id/portal">HERE</a>
         </u>{' '}
@@ -319,15 +319,15 @@ function CAform() {
           </div>
         </div> */}
 
-        <div className={ styles.button } onClick={ handleBuy }>
+        {/* <div className={ styles.button } onClick={ handleBuy }>
           Pay & Register
-        </div>
+        </div> */}
 
-        {/* <div className={styles.button} onClick={() => {
+        <div className={styles.button} onClick={() => {
           alert('Registrations for Internship Drive are closed, see you next year!!')
         }}>
           Registrations Closed
-        </div> */}
+        </div>
       </form>
     </div>
   )

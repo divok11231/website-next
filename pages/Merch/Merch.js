@@ -16,7 +16,7 @@ function Merch() {
       cost: 350,
       added: false,
       count: 1,
-      img: '../../assets/images//Merch/1.png'
+      img: '../../assets/images/Merch/1.png'
     },
     {
       id: '2',
@@ -24,7 +24,7 @@ function Merch() {
       cost: 350,
       added: false,
       count: 1,
-      img: '../../assets/images//Merch/2.png'
+      img: '../../assets/images/Merch/2.png'
     },
     {
       id: '3',
@@ -32,7 +32,7 @@ function Merch() {
       cost: 350,
       added: false,
       count: 1,
-      img: '../../assets/images//Merch/3.png'
+      img: '../../assets/images/Merch/3.png'
     },
     {
       id: '4',
@@ -40,7 +40,7 @@ function Merch() {
       cost: 350,
       added: false,
       count: 1,
-      img: '../../assets/images//Merch/4.png'
+      img: '../../assets/images/Merch/4.png'
     },
     {
       id: '5',
@@ -48,7 +48,7 @@ function Merch() {
       cost: 350,
       added: false,
       count: 1,
-      img: '../../assets/images//Merch/5.png'
+      img: '../../assets/images/Merch/5.png'
     }
   ]
 
@@ -66,7 +66,7 @@ function Merch() {
       }
     }
     if (!found) {
-      setList([ 
+      setList([
         ...carlist,
         { id: id, name: name, cost: cost, added: true, count: count }
       ])
@@ -125,6 +125,7 @@ function Merch() {
   }
   // console.log(carlist.some(obj => obj.id === item.id && obj.name === item.name && obj.cost!=item.cost))
 
+  console.log(list[1].img)
   return (
     <>
       <div className={styles.container}>
@@ -190,11 +191,15 @@ function Merch() {
         </div>
 
         {/* Merch Card Render */}
-
         {list.map((item) => {
           return (
             <>
-              <div className={styles.card}>
+              <div
+                className={styles.card}
+                  style={{
+                    background: "url('${item.img}')"
+                  }}
+              >
                 <div className={styles.cardContent}>
                   <h2 className={styles.cardTitle}>{item.name}</h2>
                   <p className={styles.cardBody}>

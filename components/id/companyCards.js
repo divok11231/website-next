@@ -131,8 +131,8 @@ function CompanyCards({email, session, status, paid}) {
                       <div>
                         <button
                           className={styles.button}
-                           onClick={(e) => e.preventDefault(applyNow(data._id))}
-                         // onClick={(e)=>{alert('Application are temporary closed, the next window will begin shortly')}}
+                          //  onClick={(e) => e.preventDefault(applyNow(data._id))}
+                         onClick={(e)=>{alert('Application have been closed, see you next year !!')}}
                         >
                           Apply Now
                         </button>

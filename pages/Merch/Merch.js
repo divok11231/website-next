@@ -196,9 +196,9 @@ function Merch() {
             <>
               <div
                 className={styles.card}
-                  style={{
-                    background: "url('${item.img}')"
-                  }}
+                  // style={{
+                  //   background: "url('${item.img}')"
+                  // }}
               >
                 <div className={styles.cardContent}>
                   <h2 className={styles.cardTitle}>{item.name}</h2>

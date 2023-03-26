@@ -40,7 +40,7 @@ function TicketCard() {
     }
     // console.log(userId)
     const order = await fetch(
-      `https://backend-api-2022.onrender.com/api/tickets/getOrderId/6419d65e6fc171fa30885555`,
+      `https://backend-api-2022.onrender.com/founders/createOrder/6405d765e6c0fce9e0c789ab`,
       {
         method: 'GET'
       }
@@ -51,7 +51,7 @@ function TicketCard() {
       amount: order.amount.toString(),
       currency: 'INR',
       name: 'E-Cell BITS Hyderabad',
-      description: 'Test Transaction',
+      description: 'Founders Pass Transaction',
       order_id: order.id,
       callback_url: `https://backend-api-2022.onrender.com/founders/addFounder/${data.name}/${data.email}/${data.contact}`,
       theme: {

@@ -1,11 +1,16 @@
 import React from 'react'
-import s from '../styles/tic.module.css'
+import s from '../styles/tick.module.css'
 import { useState } from 'react'
+import { data } from 'remark'
 
 function TicketCard() {
   const [ticket, setTicket] = useState('6405d765e6c0fce9e0c789ab')
   const [coupon, setCoupon] = useState('')
-  const [email, setEmail] = useState('')
+  const [data, setData] = useState({
+    email: '',
+    name: '',
+    contact: ''
+  })
   const [couponStatus, setcouponStatus] = useState('')
   const [invalid, setInvalid] = useState(false)
 
@@ -24,22 +29,23 @@ function TicketCard() {
   }
 
   async function handleBuy() {
-    const userId = email
-    console.log(email)
-    const ticketId = ticket
-    console.log(ticketId, '999')
+    // const userId = email
+    // console.log(email)
+    // const ticketId = ticket
+    // console.log(ticketId, '999')
     const res = await loadRazorpay()
     if (!res) {
       alert('Razorpay SDK failed to load')
       return
     }
-    console.log(userId)
+    // console.log(userId)
     const order = await fetch(
-      `https://backend-api-2022.onrender.com/api/tickets/getOrderId/${ticketId}`,
+      `https://backend-api-2022.onrender.com/api/tickets/getOrderId/6419d65e6fc171fa30885555`,
       {
         method: 'GET'
       }
     ).then((t) => t.json())
+    console.log('reached')
     const options = {
       key: 'rzp_live_FWRQdHoaQSe74v',
       amount: order.amount.toString(),
@@ -47,7 +53,7 @@ function TicketCard() {
       name: 'E-Cell BITS Hyderabad',
       description: 'Test Transaction',
       order_id: order.id,
-      callback_url: `https://backend-api-2022.onrender.com/api/tickets/buy/${ticketId}/${userId}`,
+      callback_url: `https://backend-api-2022.onrender.com/founders/addFounder/${data.name}/${data.email}/${data.contact}`,
       theme: {
         color: '#150050'
       }
@@ -89,24 +95,48 @@ function TicketCard() {
         <div className={s.card}>
           <div className={s.head}>Founders Pass</div>
           <div className={s.inputs}>
-            <div className={s.label}>Registered Email ID : </div>
-            <div className={s.label2}>
-              {'('}Make sure this email perfectly matches with your registered
-              email{')'}
-            </div>
+            <div className={s.label}>Name :</div>
             <input
-              name="email"
+              name="name"
               className={s.input}
-              placeholder="email"
-              value={email}
+              placeholder="Name"
+              value={data.name}
               onChange={(e) => {
-                setEmail(e.target.value)
-                setInvalid(true)
-                console.log(email)
+                setData({ ...data, [e.target.name]: e.target.value })
+                // setInvalid(true)
+                console.log(data)
               }}
             ></input>
           </div>
           <div className={s.inputs}>
+            <div className={s.label}>Email :</div>
+            <input
+              name="email"
+              className={s.input}
+              placeholder="Email"
+              value={data.email}
+              onChange={(e) => {
+                setData({ ...data, [e.target.name]: e.target.value })
+                // setInvalid(true)
+                console.log(data)
+              }}
+            ></input>
+          </div>
+          <div className={s.inputs}>
+            <div className={s.label}>Contact:</div>
+            <input
+              name="contact"
+              className={s.input}
+              placeholder="Contact Number"
+              value={data.contact}
+              onChange={(e) => {
+                setData({ ...data, [e.target.name]: e.target.value })
+                // setInvalid(true)
+                console.log(data)
+              }}
+            ></input>
+          </div>
+          {/* <div className={s.inputs}>
             <div className={s.label}>Coupon Code : </div>
             <div className={s.label2}>{couponStatus}</div>
             <input
@@ -122,11 +152,11 @@ function TicketCard() {
                 console.log(ticket)
               }}
             ></input>
-          </div>
+          </div> */}
 
-          <div onClick={handleCoupon} className={s.buy}>
+          {/* <div onClick={handleCoupon} className={s.buy}>
             Apply Coupon
-          </div>
+          </div> */}
 
           <div onClick={handleBuy} className={s.buy}>
             buy ticket

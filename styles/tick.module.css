@@ -1,0 +1,77 @@
+.container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    margin-top: -15vh;
+}
+.card{
+    margin-top: 5vh;
+    background: rgb(46, 46, 46);
+    height: min-content;
+    padding-bottom: 5vh;
+    border-radius: 20px;
+    width: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+}
+.head{
+    margin-top: 5vh;
+    font-size: 3vh;
+    border-bottom: 1px solid blue;
+    margin-bottom: 5vh;
+}
+.inputs {
+  width: 75%;
+  margin-bottom: 30px;
+  margin-top: 2vh;
+  display: flex;
+  /* margin-right:auto ; */
+  flex-direction: column;
+  /* align-items: center;
+  justify-content: center; */
+}
+.input {
+  outline: none;
+  background-color: black;
+  border: none;
+  height: 3em;
+  margin-top: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  color: white;
+  font-size: 1.1em;
+  padding-left: 10px;
+
+  padding-right: 10px;
+}
+.label{
+    font-size: 2.5vh;
+    margin-right: auto;
+}
+.label2{
+    font-size: 2vh;
+}
+.buy{
+width: auto;
+padding: 1vh 3vh 1vh 3vh;
+margin-top: 5vh;
+    height: auto;
+    background: rgb(0, 81, 255);
+    border-radius: 10px;
+}
+.buy:hover{
+    cursor: pointer;
+    background: rgba(0, 81, 255, 0.31);
+
+}
+@media screen and (max-width: 600px) {
+    .card{
+        width: 40vh;
+    }
+    .buy{
+        margin-top: 2.5vh;
+    }
+}

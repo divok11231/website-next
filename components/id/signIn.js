@@ -115,12 +115,12 @@ function SignIn() {
         </button>
       </div>
       <div className={styles.forgot}>
-        <Link href="#">
-          <a className={styles.forgotPwd}>Forgot Password?</a>
+        <Link href="#" className={styles.forgotPwd}>
+          Forgot Password?
         </Link>
       </div>
     </div>
-  )
+  );
 }
 
 export default SignIn

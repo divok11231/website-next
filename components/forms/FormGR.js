@@ -23,20 +23,20 @@ function FormGR() {
   }
   const handleSubmit = async (e) => {
     e.preventDefault()
-    // await fetch("https://api.apispreadsheets.com/data/vAoSb7hvrZ1N2iKP/",
-    // {
-    // 	method: 'POST',
-    // 	body: JSON.stringify({"data": data}),
-    // })
-    // 	.then((res) => {
-    // 		alert("Form Data Submitted :)");
-    // 	}).then(() => {
-    // 		window.location = "https://www.ecellbphc.in/groundreality";
-    // 	})
-    // 	.catch((err) => {
-    // 		alert("Form Data Not Submitted :( . Please Try Again");
-    // 	});
-    alert('Registrations have closed, hope to see you next year!')
+    await fetch('https://api.apispreadsheets.com/data/ueZvTHiIs7FYejyo/', {
+      method: 'POST',
+      body: JSON.stringify({ data: data })
+    })
+      .then((res) => {
+        alert('Form Data Submitted :)')
+      })
+      .then(() => {
+        window.location = 'https://www.ecellbphc.in/groundreality'
+      })
+      .catch((err) => {
+        alert('Form Data Not Submitted :( . Please Try Again')
+      })
+    // alert('Registrations have closed, hope to see you next year!')
     setData({ ...data, ...INITIAL_VALUES })
   }
 

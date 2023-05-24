@@ -10,6 +10,11 @@
   justify-content: center;
   transform: translateX(40vw);
 }
+.note{
+  margin-bottom: 2vh;
+  color: red;
+  font-weight: bold ;
+}
 .cards2 {
   display: flex;
   flex-direction: row;

@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300&display=swap');
-
+ 
 .cardWrapper {
   display: flex;
   justify-content: center;
@@ -8,7 +8,37 @@
   text-align: center;
   margin-bottom: 20vh;
 }
-
+.contain{
+  background-color: rgba(10,10,10,1);
+    box-shadow: 0 4px 20px 0 rgb(0, 110, 255);
+ 
+  /* background-color: blue; */
+  min-height: 80vh;
+  display: flex;
+  /* border: 1px solid white; */
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5vh 10vh 5vh 10vh;
+  border-radius: 10px;
+  margin-top: 13vh;
+  margin-bottom: 5vh;
+  flex-direction: column;
+  align-items: center;
+}
+.header{
+  font-size: 6vh;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 0.5vh;
+    text-align: center;
+    margin-top: 50px;
+ 
+}
+.subheader{
+  font-size: 4vh;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 0.5vh;
+}
 .cardContainer {
   /* box-shadow: 0 4px 8px 0 rgb(95, 83, 207), 0 6px 20px 0 rgb(36, 68, 128); */
   background-color: rgb(17, 17, 17);
@@ -19,14 +49,14 @@
   text-align: center;
   border-radius: 10px;
 }
-
+ 
 .signInBtn {
   font-size: 1.2rem;
   color: white;
   width: 10vw;
   height: 45px;
   transform: scale(0.7);
-
+ 
   padding-bottom: 4px;
   padding-top: 4px;
   border-radius: 5px;
@@ -47,7 +77,7 @@
   border-radius: 5px;
   width: 10vw;
   transform: scale(0.7);
-
+ 
   height: 45px;
   background: white;
   color: black;
@@ -61,7 +91,7 @@
   border: 1px solid white;
   transition: 0.2s;
 }
-
+ 
 .signUpBtn {
   font-size: 1.2rem;
   color: black;
@@ -71,7 +101,7 @@
   padding-top: 4px;
   border-radius: 5px;
   transform: scale(0.7);
-
+ 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -80,7 +110,7 @@
   border: 1px solid white;
   transition: 0.2s;
 }
-
+ 
 .signupbtnoff {
   font-size: 1.2rem;
   color: white;
@@ -98,19 +128,19 @@
   border: 1px solid grey;
   transition: 0.2s;
 }
-
+ 
 .signupbtnoff:hover {
   color: black;
   background: white;
   cursor: pointer;
 }
-
+ 
 /* .signIn:hover, .signUp:hover {
   text-decoration: underline;
   text-decoration-color: white;
   cursor: pointer;
 } */
-
+ 
 .links {
   display: flex;
   flex-direction: row;
@@ -120,17 +150,17 @@
   margin-right: 5vw;
   margin-left: 5vw;
 }
-
+ 
 .signIn {
   flex: 3;
   padding-right: 2vw;
 }
-
+ 
 .signUp {
   flex: 3;
   padding-left: 2vw;
 }
-
+ 
 .inputs {
   color: rgba(255, 255, 255, 0.61);
   display: flex;
@@ -140,15 +170,15 @@
   min-height: 25vh;
   margin: 15px 0 15px 0;
 }
-
+ 
 .inp {
   color: white;
 }
-
+ 
 .inputField {
   outline: 0;
   border: 0;
-  border: 1px solid #9b9b9b;
+  border-bottom: 2px solid #9b9b9b;
   background: transparent;
   width: 28vw;
   padding: 10px 5px 10px 5px;
@@ -156,23 +186,26 @@
   border-radius: 5px;
   color: white;
   font-size: large;
-  margin: 10px 0 10px 0;
+  margin: 10px 0 10px 0;  
+  transition : 0.2s ease-in-out;
 }
-
+.inputField:focus{
+  border: 2px solid rgb(7, 144, 255);
+}
 /* .inputField:focus {
   border-bottom: 2px solid white;
 } */
-
+ 
 .butn {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
+ 
 .btn {
   margin-top: 4vh;
-  height: 8vh;
-  width: 10vw;
+  height: 6vh;
+  width: 8vw;
   background-color: rgb(5, 124, 221);
   border: none;
   font-weight: bold;
@@ -181,7 +214,7 @@
   cursor: pointer;
   border-radius: 5px;
 }
-
+ 
 .Sbtn {
   margin-bottom: 5vh;
   margin-top: 4vh;
@@ -195,22 +228,22 @@
   font-size: medium;
   cursor: pointer;
 }
-
+ 
 .btn:hover,
 .Sbtn:hover {
   background-color: rgb(3, 75, 134);
 }
-
+ 
 .forgot {
   margin-top: 3vh;
   margin-bottom: 4vh;
 }
-
+ 
 .forgotPwd {
   text-align: center;
   color: rgba(255, 255, 255, 0.61);
 }
-
+ 
 .forgotPwd:hover {
   text-decoration: underline;
 }
@@ -218,37 +251,46 @@
   display: flex;
   flex-direction: column;
 }
-
+ 
 .inputFieldSignup {
   all: unset;
   margin-top: 10vh;
   margin-bottom: -5vh;
   color: white;
-  border-bottom: 2px solid #9b9b9b;
+  border-bottom: 2px solid #00c3ff;
   background: transparent;
   text-align: left;
   width: 15vw;
 }
-
+ 
 .inputFieldSignup:focus {
   border-bottom: 2px solid white;
 }
-
+ 
+.Header {
+  color: white;
+  font-size: 3em;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Bebas Neue', cursive;
+  border-bottom: 1px solid rgb(0, 133, 241);
+  width: fit-content;
+}
 @media only screen and(max-width: 620px) {
   .cardContainer {
     width: 90vw;
   }
 }
-
+ 
 @media only screen and (max-width: 1000px) {
   .cardContainer {
     width: 60vw;
     padding-left: 10vw;
     padding-right: 10vw;
   }
-  .inputField {
+  /* .inputField {
     width: 35vw;
-  }
+  } */
   .btn {
     width: 25vw;
   }
@@ -261,8 +303,24 @@
   .inputs {
     margin-top: 5vh;
   }
+   .contain{
+    width: 95%;
+  }
+  .inputField{
+    /* margin-left: -8vw; */
+    width: 80vw;
+  }
+  .butn{
+    /* background-color: pink; */
+    width: 100%;
+  }
+  .Sbtn{
+    width: 30%;
+    height: 5.8vh;
+    /* background-color: red; */
+  }
 }
-
+ 
 @media only screen and (max-width: 750px) {
   /* .cardContainer {
      width: 60vw;
@@ -304,12 +362,29 @@
     height: 10vh;
     width: 17vw;
   }
-  .inputField {
-    width: 35vw;
-  }
+  /* .inputField {
+    width: 125%;
+    margin-left: -7vw;
+  } */
   .links {
     margin-right: 3vw;
     margin-left: 3vw;
+  }
+   .contain{
+    width: 95%;
+  }
+  .inputField{
+    margin-left: -11vw;
+    height: 6vh;
+    width: 150%;
+  }
+  .butn{
+    /* background-color: pink; */
+    width: 100%;
+  }
+  .Sbtn{
+    width: 60%;
+    /* background-color: red; */
   }
 }
 @media only screen and(max-width: 620px) {
@@ -317,7 +392,24 @@
     width: 90vw;
   }
 }
-
+@media only screen and (max-width:400px){
+  .contain{
+    width: 95%;
+  }
+  .inputField{
+    margin-left: -8vw;
+    width: 130%;
+  }
+  .butn{
+    /* background-color: pink; */
+    width: 100%;
+  }
+  .Sbtn{
+    width: 60%;
+    /* background-color: red; */
+  }
+}
+ 
 /* @media only screen and (max-width: 1500px) and (min-width: 1129px) {
   .cardContainer {
     padding-left: 5vw;
@@ -339,13 +431,13 @@
     margin-top: 7vh;
   }
 } */
-
-.Header {
+.note {
+  font-size: 15px;
+  text-align: center;
   color: white;
-  font-size: 3em;
-  margin-left: auto;
-  margin-right: auto;
-  font-family: 'Bebas Neue', cursive;
-  border-bottom: 1px solid rgb(0, 133, 241);
-  width: fit-content;
+  /* border-bottom:5px solid #fb0057;
+  border-radius: 20px;
+  width:50%; */
+  /* margin-left: 25%; */
+  /* margin-bottom: 10px; */
 }

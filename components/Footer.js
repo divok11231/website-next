@@ -89,11 +89,11 @@ export default function Footer() {
         </div>
         <div className={styles.otherlinks}>
           <h2>Other Links</h2>
-          <Link href="/termsandconditions">
-            <a className={styles.terms}>Terms and Conditions</a>
+          <Link href="/termsandconditions" className={styles.terms}>
+            Terms and Conditions
           </Link>
-          <Link href="/privacypolicy">
-            <a className={styles.terms}>Privacy Policy</a>
+          <Link href="/privacypolicy" className={styles.terms}>
+            Privacy Policy
           </Link>
         </div>
       </div>
@@ -101,5 +101,5 @@ export default function Footer() {
         Copyright 2021 All rights reserved. Designed by E-Cell BITS Hyderabad
       </div>
     </footer>
-  )
+  );
 }

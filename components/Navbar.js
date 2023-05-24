@@ -20,14 +20,21 @@ export default function Navbar(props) {
       <div className={Navbarcss.navbar}>
         <div className={Navbarcss.logo}>
           <Link href="/">
-            <a>
-              <Image src={pic1} width={160} height={60} />
-            </a>
+            <Image src={pic1} width={160} height={60} />
           </Link>
         </div>
         <div className={Navbarcss.buttons}>
-          <Link href="/esummit">
-            <a className={Navbarcss.button}>Esummit</a>
+          <Link href="/internshipDriveReg">
+            <div className={Navbarcss.button}>Internship Drive</div>
+          </Link>
+          <Link href="/pitchersPilot" className={Navbarcss.button}>
+            <div className={Navbarcss.button}>Pitcher&apos;s Pilot</div>
+          </Link>
+          <Link
+            href="https://launchpad23.vercel.app/"
+            className={Navbarcss.button}
+          >
+            <div className={Navbarcss.button}>Launchpad</div>
           </Link>
           <a
             className={Navbarcss.button}
@@ -37,45 +44,30 @@ export default function Navbar(props) {
           >
             Community
           </a>
-          <Link href="/blog">
-            <a className={Navbarcss.button}>Blog</a>
-          </Link>
           <Link href="/about">
-            <a className={Navbarcss.button}>About us</a>
+            <div className={Navbarcss.button}>About us</div>
           </Link>
           {/* <Link href="/id/portal">
-            <a
-              onClick={() => {
-                setrender('ID')
-              }}
-              className={Navbarcss.button}
-            >
-              Internship Drive
-            </a>
-          </Link> */}
-          {' '}
-          <Link href="/suitUP">
-            <a
-              // onClick={() => {
-              //   setrender('ID')
-              // }}
-              className={Navbarcss.button}
-            >
-              Suit Up
-            </a>
-          </Link>{' '}
-          
+          <a
+            onClick={() => {
+              setrender('ID')
+            }}
+            className={Navbarcss.button}
+          >
+            Internship Drive
+          </a>
+        </Link> */}{' '}
           {/*<Link href="/welcome/signup">
-            <a className={(Navbarcss.button, Navbarcss.rightmostbutton)}>
-              Sign Up
-            </a>
-  </Link>*/}
+          <a className={(Navbarcss.button, Navbarcss.rightmostbutton)}>
+            Sign Up
+          </a>
+</Link>*/}
         </div>
       </div>
 
       <div className={Navbarcss.topbar}>
         <div className={Navbarcss.mb_logo}>
-          <Link href="/">
+          <Link href="/" legacyBehavior>
             <Image
               src={pic2}
               alt="ECell logo"
@@ -99,15 +91,29 @@ export default function Navbar(props) {
         </div>
         <div className={Navbarcss.mobilenav_logo}>
           <Link href="/">
-            <a>
-              <Image src={pic1} width={200} height={75} />
-            </a>
+            <Image src={pic1} width={200} height={75} />
           </Link>
         </div>
-        <Link href="/esummit">
-          <a onClick={() => handleClick()} className={Navbarcss.mobilebtn}>
-            Esummit
-          </a>
+        <Link
+          href="/internshipDriveReg"
+          onClick={() => handleClick()}
+          className={Navbarcss.mobilebtn}
+        >
+          Internship Drive
+        </Link>
+        <Link
+          href="/pitchersPilot"
+          onClick={() => handleClickID()}
+          className={Navbarcss.mobilebtn}
+        >
+          Pitchers Pilot
+        </Link>
+        <Link
+          href="https://launchpad23.vercel.app/"
+          onClick={() => handleClick()}
+          className={Navbarcss.mobilebtn}
+        >
+          Launchpad 23
         </Link>
         <a
           onClick={() => handleClick()}
@@ -118,26 +124,19 @@ export default function Navbar(props) {
         >
           Community
         </a>
-        <Link href="/blog">
-          <a onClick={() => handleClick()} className={Navbarcss.mobilebtn}>
-            Blog
-          </a>
-        </Link>
-        <Link href="/about">
-          <a onClick={() => handleClick()} className={Navbarcss.mobilebtn}>
-            About Us
-          </a>
-        </Link>
-        <Link href="/suitUP">
-          <a onClick={() => handleClickID()} className={Navbarcss.mobilebtn}>
-            Suit Up
-          </a>
+
+        <Link
+          href="/about"
+          onClick={() => handleClick()}
+          className={Navbarcss.mobilebtn}
+        >
+          About Us
         </Link>
 
         {/* <Link href="/welcome/signup">
-          <a onClick={() => handleClick()} className={Navbarcss.mobilebtn}>
-            Sign Up
-          </a>
+        <a onClick={() => handleClick()} className={Navbarcss.mobilebtn}>
+          Sign Up
+        </a>
 </Link>*/}
       </div>
     </>

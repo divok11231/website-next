@@ -9,7 +9,7 @@ import CompCards from '../../components/id/comCards'
 import ReactPlayer from 'react-player'
 import { useEffect, useState } from 'react'
 import { useSession } from 'next-auth/react'
-import { signIn, signOut } from 'next-auth/react'
+// import { signIn, signOut } from 'next-auth/react'
 
 export default function Home() {
   const [playing, setPlaying] = useState(false)
@@ -23,10 +23,19 @@ export default function Home() {
     setTimeout(videoplay, 7)
   }, [])
 
-  const { data: session, status } = useSession()
+  const [session, setSession] = useState({
+    _id: '',
+    token: '',
+  })
+  const [status, setStatus] = useState(false)
+  // const { data: session, status } = useSession()
   useEffect(() => {
-    console.log(session)
-    console.log(status)
+    session._id = localStorage.getItem('userid')
+    session.token = localStorage.getItem('token')
+    setStatus(localStorage.getItem('status'))
+    // console.log(session)
+    // console.log(status)
+    
     if (session) {
       console.log('something', session)
       // return (
@@ -55,22 +64,16 @@ export default function Home() {
               </div> */}
               {status === 'authenticated' ? (
                 <Link href="/id/profile">
-                  <button className={styles.portalbtn}>
-                    My Profile
-                  </button>
+                  <button className={styles.portalbtn}>My Profile</button>
                 </Link>
               ) : (
-                <button
-                  className={styles.dashbtn}
-                  onClick={(e) => {
-                    e.preventDefault()
-                    signIn(null, {
-                      callbackUrl: '/id/profile'
-                    })
-                  }}
-                >
-                  Login
-                </button>
+                <Link href="https://www.ecellbphc.in/id/signUp">
+                  <button
+                    className={styles.dashbtn}
+                  >
+                    Login
+                  </button>
+                </Link>
               )}
               {/* <button className={styles.portalbtn}>Redirect to Portal</button> */}
             </div>
@@ -79,7 +82,7 @@ export default function Home() {
           <div className={styles.video}>
             <ReactPlayer
               // playing={playing}
-              url="https://youtu.be/d7V9pdM7e58"
+              url="https://youtu.be/hood68TAnv0"
               width="100%"
               height="100%"
               controls={false}
@@ -106,7 +109,7 @@ export default function Home() {
           </div>
           <div className={styles.stats}>
             <StatsCounter start={0} end={50} info="Startups" />
-            <StatsCounter start={14000} end={30000} info="Stipend" />
+            <StatsCounter start={14000} end={50000} info="Stipend" />
             <StatsCounter start={50} end={100} info="Interns Converted" />
             <StatsCounter start={1500} end={3000} info="Applications" />
           </div>

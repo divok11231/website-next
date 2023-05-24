@@ -4,8 +4,8 @@ import Image from 'next/image'
 import { useSession } from 'next-auth/react'
 import axios from 'axios'
 
-function AppliedCards({ randomString }) {
-  const { data: session, status } = useSession()
+function AppliedCards({ randomString, email , session, status}) {
+  // const { data: session, status } = useSession()
   const [datas, setData] = useState([])
   useEffect(() => {
     console.log('use effect called')
@@ -16,7 +16,7 @@ function AppliedCards({ randomString }) {
           {
             headers: {
               'Content-Type': 'application/json',
-              Authorization: 'Bearer ' + session.accessToken
+              Authorization: 'Bearer ' + session.token
             }
           }
         )

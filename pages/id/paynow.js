@@ -2,7 +2,7 @@ import React from 'react'
 import styles from '../../styles/id/paynow.module.css'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import { useSession } from 'next-auth/react'
+// import { useSession } from 'next-auth/react'
 
 function Paynow() {
   const cs = []
@@ -24,6 +24,13 @@ function Paynow() {
   const [text, setText] = useState('Enter Coupon Code')
   const [cost, setCost] = useState(265)
 
+    const [status, setStatus] = useState('')
+    const [session, setSession] = useState({
+      _id: '',
+      token: ''
+    })
+    const [email, setEmail] = useState('')
+
   const initializeRazorpay = () => {
     return new Promise((resolve) => {
       const script = document.createElement('script')
@@ -40,10 +47,14 @@ function Paynow() {
     })
   }
 
-  const { data: session, status } = useSession()
+  // const { data: session, status } = useSession()
   useEffect(() => {
-    console.log(session)
-    console.log(status)
+            // setStatus(localStorage.getItem('status'))
+            // setSession({
+            //   _id: localStorage.getItem('userid'),
+            //   token: localStorage.getItem('token')
+            // })
+            // setEmail(localStorage.getItem('email'))
     if (session) {
       console.log('something', session)
       // return (
@@ -63,7 +74,7 @@ function Paynow() {
         .post(
           'https://backend-api-2022.onrender.com/api/payments/getPaymentStatus',
           {
-            email: session.user.email
+            email: email
           }
         )
         .then((res) => {
@@ -75,7 +86,7 @@ function Paynow() {
           console.log(err)
         })
     }
-    if (status === 'authenticated' && session.user.email) {
+    if (status === 'authenticated' && email) {
       get()
     }
   }, [])
@@ -102,13 +113,13 @@ function Paynow() {
     e.preventDefault()
     const res = await initializeRazorpay()
 
-    if (session?.user.email && session?.user._id && res) {
+    if (email && session?._id && res) {
       axios
         .post(
           'https://backend-api-2022.onrender.com/api/payments/createOrder',
           {
-            email: session.user.email,
-            _id: session.user._id,
+            email: email,
+            _id: session._id,
             cost,
             coupon
           }
@@ -208,7 +219,7 @@ function Paynow() {
 
   return (
     <>
-      {/* <div className={styles.container}>
+      <div className={styles.container}>
         <div className={styles.box}>
           <div className={styles.header}>Pay Here</div>
           <div className={styles.coupon}>
@@ -247,10 +258,10 @@ function Paynow() {
             </div>
           </div>
         </div>
-      </div> */}
-      <div className={styles.container}>
-        <div style={{ fontSize: '1.5em'}}> Registrations have closed !!</div>
       </div>
+      {/* <div className={styles.container}>
+        <div style={{ fontSize: '1.5em'}}> Registrations have closed !!</div>
+      </div> */}
     </>
   )
 }

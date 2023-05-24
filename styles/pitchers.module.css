@@ -33,7 +33,7 @@
 .formheader {
   font-size: 3em;
   font-weight: 700;
-  border-bottom: 1px solid rgb(8, 126, 223);
+  border-bottom: 1px solid rgb(150, 11, 145);
   margin-bottom: 1em;
 }
 .row {
@@ -50,9 +50,9 @@
 }
 .input {
   outline: none;
-  background-color: black;
+  background-color: rgba(0,0,0,0.7);
   border: none;
-  height: 3em;
+  height: 5em;
   margin-top: 10px;
   border: 1px solid black;
   border-radius: 5px;
@@ -79,13 +79,13 @@
   font-size: 1.6em;
   width: auto;
   height: auto;
-  background: rgb(11, 87, 150);
+  background: rgb(150, 11, 145);
   padding: 10px 20px 10px 20px;
   border-radius: 5px;
 }
 .submit:hover {
   cursor: pointer;
-  background-color: rgb(8, 126, 223);
+  background-color: rgba(150, 11, 145, 0.43);
 }
 .header {
   width: 80%;
@@ -99,7 +99,7 @@
 }
 .Register {
   font-size: 25px;
-  border: 1px solid blue;
+  border: 1px solid purple;
   border-radius: 5px;
   margin-top: 2em;
   margin-bottom: 15px;
@@ -118,7 +118,7 @@
 .name {
   box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.7);
   background: rgba(0, 0, 0, 0.6);
-  box-shadow: 0 4px 256px 0 rgba(15, 82, 182, 0.77);
+  box-shadow: 0 4px 256px 0 rgba(213, 9, 183, 0.77);
   -webkit-backdrop-filter: blur(20px);
   border-radius: 10px;
   text-align: center;
@@ -129,7 +129,8 @@
   text-transform: uppercase;
   font-weight: bold;
   padding: 0.5rem;
-  background: url('../assets/images/text-bg2.webp');
+  /* background: url('../assets/images/text-bg2.webp'); */
+  background-color: white;
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -152,7 +153,7 @@
   border-radius: 10px;
   box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.7);
   background: rgba(0, 0, 0, 0.041);
-  box-shadow: 0 4px 64px 0 rgba(10, 43, 92, 0.77);
+  box-shadow: 0 4px 64px 0 rgba(213, 9, 183, 0.30);
   -webkit-backdrop-filter: blur(20px);
   font-size: 20px;
   text-align: center;
@@ -168,7 +169,7 @@
   color: white;
   font-size: 40px;
   text-align: center;
-  border-bottom: 1px solid rgb(0, 89, 148);
+  border-bottom: 1px solid purple;
   font-weight: 700;
   display: flex;
   text-align: center;
@@ -181,7 +182,7 @@
   background: -webkit-radial-gradient(
     center,
     50% 50%,
-    rgb(9, 53, 95),
+    rgba(213, 9, 183, 0.30),
     rgba(0, 0, 0, 1)
   );
   color: #fff;
@@ -195,7 +196,7 @@
   background: -webkit-radial-gradient(
     center,
     50% 50%,
-    rgb(8, 43, 75),
+    rgba(213, 9, 183, 0.30),
     rgba(0, 0, 0, 1)
   );
   width: 100%;
@@ -210,8 +211,9 @@
 
 .faq {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap;  
   justify-content: center;
+  background: radial-gradient(purple);
 }
 @media screen and (max-width: 1480px) {
   .form {

@@ -1,14 +1,39 @@
 import React, { useState } from 'react'
 
 import { v4 as uuidv4 } from 'uuid'
-
+import axios from 'axios'
 import CompanyCards from '../../components/id/companyCards'
 import AppliedCards from '../../components/id/appliedCards'
 import styles from '../../styles/id/viewcompany.module.css'
+import { useEffect } from 'react'
 
 function ViewCompany() {
   const [toggle, setToggle] = useState(1)
   const [randomString, setRandomString] = useState(uuidv4())
+
+    const [status, setStatus] = useState('')
+    const [session, setSession] = useState({
+      _id: '',
+      token: ''
+    })
+    const [email, setEmail] = useState('')
+
+  const [paid, setPaid] = useState(false)
+
+  useEffect(() => {
+                setStatus(localStorage.getItem('status'))
+                setSession({
+                  _id: localStorage.getItem('userid'),
+                  token: localStorage.getItem('token')
+                })
+                setEmail(localStorage.getItem('email'))
+
+                const paid = axios.post(
+                  'https://www.ecellbphc.in/api/auth/getUser',
+                  { email: email }
+                )
+    setPaid(paid)
+  },[])
 
   const handleClass = (toggle) => {
     if (toggle == 1) {
@@ -69,12 +94,23 @@ function ViewCompany() {
         <div className={handleHead(toggle)}>View Companies</div>
         <div className={handleHead2(toggle)}>Applied Companies</div>
       </div>
+      <div className={styles.note}>(You have a maximum of 6 applications)</div>
       <div className={styles.AllCards}>
         <div className={handleClass(toggle)}>
-          <CompanyCards />
+          <CompanyCards
+            email={email}
+            session={session}
+            status={status}
+            paid={paid}
+          />
         </div>
         <div className={handleClass2(toggle)}>
-          <AppliedCards randomString={randomString} />
+          <AppliedCards
+            randomString={randomString}
+            email={email}
+            session={session}
+            status={status}
+          />
         </div>
       </div>
       <div

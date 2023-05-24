@@ -10,7 +10,7 @@ import axios from 'axios'
 import { useSession } from 'next-auth/react'
 import { stat } from 'fs'
 
-function Navbar() {
+function Navbar({email, session, status}) {
   const [hamOn, setHamOn] = useState(true)
   const [paids, setPaid] = useState(false)
 
@@ -34,10 +34,17 @@ function Navbar() {
     })
   }
 
-  const { data: session, status } = useSession()
+  // const { data: session, status } = useSession()
+  // const [status, setStatus] = useState('')
+  // const [session, setSession] = useState({
+  //   _id: '',
+  //   token: ''
+  // })
+  // const [email, setEmail] = useState('')
   useEffect(() => {
-    console.log(session)
-    console.log(status)
+    // setStatus(localStorage.getItem('status'))
+    // setSession({ _id: localStorage.getItem('userid'), token: localStorage.getItem('token') })
+    // setEmail(localStorage.getItem('email'))
     if (session) {
       console.log('something', session)
       // return (
@@ -57,7 +64,7 @@ function Navbar() {
         .post(
           'https://backend-api-2022.onrender.com/api/payments/getPaymentStatus',
           {
-            email: session.user.email
+            email: email
           }
         )
         .then((res) => {
@@ -69,7 +76,7 @@ function Navbar() {
           console.log(err)
         })
     }
-    if (status === 'authenticated' && session.user.email) {
+    if (status === 'authenticated' && email) {
       get()
     }
   }, [])
@@ -80,11 +87,16 @@ function Navbar() {
       name: 'Dashboard',
       link: '/id/portal'
     },
-    {
-      id: 3,
-      name: 'Companies',
-      link: '/id/viewCompany'
-    }
+    // {
+    //   id: 2,
+    //   name: 'Profile',
+    //   link: '/id/profile'
+    // },
+    // {
+    //   id: 3,
+    //   name: 'Companies',
+    //   link: '/id/viewCompany'
+    // }
     // {
     //   id: 4,
     //   name: "Pay Now",
@@ -96,13 +108,13 @@ function Navbar() {
     e.preventDefault()
     const res = await initializeRazorpay()
 
-    if (session?.user.email && session?.user._id && res) {
+    if (email && session?._id && res) {
       axios
         .post(
           'https://backend-api-2022.onrender.com/api/payments/createOrder',
           {
-            email: session.user.email,
-            _id: session.user._id
+            email: email,
+            _id: session._id
           }
         )
         .then((res) => {
@@ -151,7 +163,7 @@ function Navbar() {
   function PayNow() {
     if (status == 'authenticated') {
       return (
-        <Link href="/id/paynow">
+        <Link href="/id/paynow" legacyBehavior>
           <div
             className={hamOn ? styles.fadeout : styles.fadein}
             onClick={handleClick}
@@ -159,7 +171,7 @@ function Navbar() {
             PayNow
           </div>
         </Link>
-      )
+      );
     } else if (status == 'authenticated' && paids) {
       return (
         <>
@@ -193,7 +205,7 @@ function Navbar() {
   function Profile() {
     if (status == 'authenticated') {
       return (
-        <Link href="/id/profile">
+        <Link href="/id/profile" legacyBehavior>
           <div
             onClick={handleClick}
             className={hamOn ? styles.fadeout : styles.fadein}
@@ -201,26 +213,24 @@ function Navbar() {
             Profile
           </div>
         </Link>
-      )
+      );
     } else return null
   }
   function Company() {
     if (status == 'authenticated') {
-      return (
-        <>
-          <Link href="/id/viewCompany">
-            <div
-              onClick={handleClick}
-              className={hamOn ? styles.fadeout : styles.fadein}
-            >
-              Companies
-            </div>
-          </Link>
-        </>
-      )
+      return <>
+        <Link href="/id/viewCompany" legacyBehavior>
+          <div
+            onClick={handleClick}
+            className={hamOn ? styles.fadeout : styles.fadein}
+          >
+            Companies
+          </div>
+        </Link>
+      </>;
     }
     return (
-      <Link href="/id/portal">
+      <Link href="/id/portal" legacyBehavior>
         <div
           onClick={() => {
             alert('Register/LogIn First!')
@@ -231,24 +241,23 @@ function Navbar() {
           Companies
         </div>
       </Link>
-    )
+    );
   }
 
-  return (
-    <>
-      <div className={styles.ham} onClick={handleClick}>
-        <div className={hamOn ? styles.line1 : styles.run1}>
-          <div className={hamOn ? styles.innerline1 : styles.run1}></div>
-        </div>
-        <div className={hamOn ? styles.line2 : styles.run2}>
-          <div className={hamOn ? styles.innerline2 : styles.run2}></div>
-        </div>
-        <div className={hamOn ? styles.line3 : styles.run3}>
-          <div className={hamOn ? styles.innerline3 : styles.run3}></div>
-        </div>
-        <div className={hamOn ? styles.backcross1 : styles.runIn1}></div>
-        <div className={hamOn ? styles.backcross2 : styles.runIn2}></div>
+  return( <>
+    <div className={styles.ham} onClick={handleClick}>
+      <div className={hamOn ? styles.line1 : styles.run1}>
+        <div className={hamOn ? styles.innerline1 : styles.run1}></div>
       </div>
+      <div className={hamOn ? styles.line2 : styles.run2}>
+        <div className={hamOn ? styles.innerline2 : styles.run2}></div>
+      </div>
+      <div className={hamOn ? styles.line3 : styles.run3}>
+        <div className={hamOn ? styles.innerline3 : styles.run3}></div>
+      </div>
+      <div className={hamOn ? styles.backcross1 : styles.runIn1}></div>
+      <div className={hamOn ? styles.backcross2 : styles.runIn2}></div>
+    </div>
 
       <div className={hamOn ? styles.up : styles.down}>
         <div className={hamOn ? styles.none : styles.innerdown}>
@@ -291,7 +300,9 @@ function Navbar() {
           className={hamOn ? styles.logout_off : styles.logout_on}
           onClick={(e) => {
             e.preventDefault()
-            signOut({ callbackUrl: 'https://ecellbphc.in/id/portal' })
+            // signOut({ callbackUrl: 'https://ecellbphc.in/id/portal' })
+            localStorage.clear()
+            window.location.href = 'https://www.ecellbphc.in/id/portal'
           }}
         >
           Log Out
@@ -300,7 +311,7 @@ function Navbar() {
           <Image src={launchpad} alt="logo" />
         </div>
       </div>
-    </>
+  </>
   )
 }
 

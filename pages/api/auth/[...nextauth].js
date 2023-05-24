@@ -1,24 +1,26 @@
 import NextAuth from 'next-auth'
 import CredentialsProvider from 'next-auth/providers/credentials'
+import MongoConnect from '../../../database/connect'
 const jwt_decode = require('jwt-decode')
 
 const providers = [
   CredentialsProvider({
     // The name to display on the sign in form (e.g. 'Sign in with...')
-    name: 'registered credentials',
+    name: 'credentials',
     // The credentials is used to generate a suitable form on the sign in page.
     // You can specify whatever fields you are expecting to be submitted.
     // e.g. domain, username, password, 2FA token, etc.
     // You can pass any HTML attribute to the <input> tag through the object.
-    credentials: {
-      email: {
-        label: 'Email',
-        type: 'email',
-        placeholder: 'example@example.org'
-      },
-      password: { label: 'Password', type: 'password' }
-    },
+    // credentials: {
+    //   email: {
+    //     label: 'Email',
+    //     type: 'email',
+    //     placeholder: 'example@example.org'
+    //   },
+    //   password: { label: 'Password', type: 'password' }
+    // },
     async authorize(credentials, req) {
+
       // You need to provide your own logic here that takes the credentials
       // submitted and returns either a object representing a user or value
       // that is false/null if the credentials are invalid.
@@ -45,6 +47,8 @@ const providers = [
       return null
     }
   })
+
+
 ]
 
 // const providers = [
@@ -116,10 +120,11 @@ const callbacks = {
 
 const options = {
   providers,
-  secret: process.env.SECRET,
-  callbacks
+  secret : "2XSGSBWi3kGuefo4vuyGA7fkpXqwL1mDTXmaMo1hn8c=",
+  callbacks,
   // pages: {
-  //   signIn: "/login",
+  //   signIn: "/id/signIn",
+  //   signUp: "/id/signUp"
   //   },
 }
 
